@@ -1,0 +1,3002 @@
+[
+  {
+    "prompt": "What's the annual revenue of coffee shops in Seattle?",
+    "geography": "US-City",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of people in Seattle",
+        "correct": true,
+        "explanation": "This is your starting population base"
+      },
+      {
+        "text": "% of people who drink coffee daily",
+        "correct": true,
+        "explanation": "You need to identify who actually drinks coffee"
+      },
+      {
+        "text": "Average coffee purchases per week",
+        "correct": true,
+        "explanation": "Daily drinkers buy multiple times per week"
+      },
+      {
+        "text": "% who buy from coffee shops vs home",
+        "correct": true,
+        "explanation": "Many people make coffee at home instead"
+      },
+      {
+        "text": "Average price per coffee purchase",
+        "correct": true,
+        "explanation": "This converts your volume into actual revenue"
+      },
+      {
+        "text": "Number of Starbucks locations",
+        "correct": false,
+        "explanation": "Too specific to one chain, misses the total market"
+      },
+      {
+        "text": "Average rent for coffee shop space",
+        "correct": false,
+        "explanation": "Operational costs don't affect customer spending"
+      },
+      {
+        "text": "% of coffee that is organic",
+        "correct": false,
+        "explanation": "Coffee type is too detailed for market sizing"
+      },
+      {
+        "text": "Coffee bean import volume",
+        "correct": false,
+        "explanation": "Supply chain data doesn't tell you consumer demand"
+      },
+      {
+        "text": "Average barista salary",
+        "correct": false,
+        "explanation": "Cost structure doesn't drive revenue"
+      }
+    ],
+    "explanation": "To size this market, take Seattle's population and narrow it down to daily coffee drinkers, then figure out how often they buy commercially versus at home, and multiply by what they spend per purchase"
+  },
+  {
+    "prompt": "What's the size of the US home security system market?",
+    "geography": "US-Country",
+    "industry": "Technology/Security",
+    "difficulty": "Medium",
+    "approach": "Top-down",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your total addressable market"
+      },
+      {
+        "text": "% of households that own homes",
+        "correct": true,
+        "explanation": "Renters rarely install security systems"
+      },
+      {
+        "text": "% of homeowners concerned about security",
+        "correct": true,
+        "explanation": "Fear drives the purchase decision"
+      },
+      {
+        "text": "% of security-conscious homeowners who buy systems",
+        "correct": true,
+        "explanation": "Not everyone concerned actually buys"
+      },
+      {
+        "text": "Average annual cost per system",
+        "correct": true,
+        "explanation": "This converts volume into revenue"
+      },
+      {
+        "text": "Number of burglaries per year",
+        "correct": false,
+        "explanation": "Crime stats don't directly drive market size"
+      },
+      {
+        "text": "Average home value",
+        "correct": false,
+        "explanation": "Home value correlation too indirect"
+      },
+      {
+        "text": "Market growth rate",
+        "correct": false,
+        "explanation": "Growth rate sizes future market, not current"
+      },
+      {
+        "text": "Number of security companies",
+        "correct": false,
+        "explanation": "Supply side, not demand measurement"
+      },
+      {
+        "text": "Average installation time",
+        "correct": false,
+        "explanation": "Operational detail, not market driver"
+      }
+    ],
+    "explanation": "To estimate market size, start with all US households, then narrow down to homeowners who are security-conscious and actually purchase systems, then multiply by what they spend annually"
+  },
+  {
+    "prompt": "What's the annual revenue from ride-sharing in Mexico City?",
+    "geography": "Mexico-City",
+    "industry": "Transportation",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Population of Mexico City",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that uses ride-sharing",
+        "correct": true,
+        "explanation": "Not everyone uses ride-sharing services"
+      },
+      {
+        "text": "Average rides per user per month",
+        "correct": true,
+        "explanation": "Heavy users drive most of the revenue"
+      },
+      {
+        "text": "Average price per ride",
+        "correct": true,
+        "explanation": "This converts trip volume into actual revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of taxi licenses",
+        "correct": false,
+        "explanation": "Traditional taxis are a different market segment"
+      },
+      {
+        "text": "Average car ownership rate",
+        "correct": false,
+        "explanation": "Car ownership is too indirect for ride-sharing demand"
+      },
+      {
+        "text": "% of rides that are shared vs solo",
+        "correct": false,
+        "explanation": "Trip sharing details are too granular for sizing"
+      },
+      {
+        "text": "Average driver income",
+        "correct": false,
+        "explanation": "Driver earnings don't determine market size"
+      },
+      {
+        "text": "Number of traffic lights",
+        "correct": false,
+        "explanation": "Infrastructure doesn't directly affect ride demand"
+      }
+    ],
+    "explanation": "To size the ride-sharing market, start with Mexico City's population, identify what portion actually uses these apps, estimate how often they ride per month, and multiply by the average fare"
+  },
+  {
+    "prompt": "What's the size of the Canadian cannabis market?",
+    "geography": "Canada-Country",
+    "industry": "Cannabis/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian adult population",
+        "correct": true,
+        "explanation": "Only adults can legally purchase cannabis"
+      },
+      {
+        "text": "% of adults who have tried cannabis",
+        "correct": true,
+        "explanation": "Many tried it but don't buy regularly"
+      },
+      {
+        "text": "% of users who consume regularly",
+        "correct": true,
+        "explanation": "Regular users drive most market revenue"
+      },
+      {
+        "text": "Average spending per regular user per month",
+        "correct": true,
+        "explanation": "This converts user base into actual spending"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of dispensaries",
+        "correct": false,
+        "explanation": "Store count doesn't determine consumer demand"
+      },
+      {
+        "text": "% of cannabis that is medical vs recreational",
+        "correct": false,
+        "explanation": "User type segmentation is too detailed"
+      },
+      {
+        "text": "Average THC content",
+        "correct": false,
+        "explanation": "Product strength doesn't affect market size"
+      },
+      {
+        "text": "Number of cannabis licenses issued",
+        "correct": false,
+        "explanation": "Regulatory details don't measure actual demand"
+      },
+      {
+        "text": "Average growing season length",
+        "correct": false,
+        "explanation": "Agricultural factors don't drive consumer spending"
+      }
+    ],
+    "explanation": "To estimate Canada's cannabis market, start with adults who've tried it, narrow down to regular consumers who actually purchase monthly, then multiply by their average spending"
+  },
+  {
+    "prompt": "What's the annual revenue of fitness studios in Los Angeles?",
+    "geography": "US-City",
+    "industry": "Fitness/Wellness",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Population of Los Angeles",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of people who exercise regularly",
+        "correct": true,
+        "explanation": "Not everyone exercises regularly"
+      },
+      {
+        "text": "% of exercisers who prefer studios over gyms",
+        "correct": true,
+        "explanation": "Studios compete with gyms and home workouts"
+      },
+      {
+        "text": "Average monthly studio membership cost",
+        "correct": true,
+        "explanation": "This is your monthly revenue per customer"
+      },
+      {
+        "text": "Average months of membership per year",
+        "correct": true,
+        "explanation": "People often pause memberships or switch studios"
+      },
+      {
+        "text": "Number of personal trainers",
+        "correct": false,
+        "explanation": "Trainers work at studios but don't determine market size"
+      },
+      {
+        "text": "Average studio square footage",
+        "correct": false,
+        "explanation": "Facility size doesn't drive customer demand"
+      },
+      {
+        "text": "% of workouts that are group vs individual",
+        "correct": false,
+        "explanation": "Class format is too detailed for market sizing"
+      },
+      {
+        "text": "Average class duration",
+        "correct": false,
+        "explanation": "Session length doesn't affect total spending"
+      },
+      {
+        "text": "Equipment replacement cost",
+        "correct": false,
+        "explanation": "Operational costs don't determine revenue"
+      }
+    ],
+    "explanation": "To size LA's fitness studio market, start with people who exercise regularly, identify what portion chooses studios over alternatives, then multiply by membership costs and account for seasonal patterns"
+  },
+  {
+    "prompt": "What's the size of the UK food delivery market?",
+    "geography": "UK-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "UK population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that orders food delivery",
+        "correct": true,
+        "explanation": "Not everyone uses food delivery services"
+      },
+      {
+        "text": "Average delivery orders per person per month",
+        "correct": true,
+        "explanation": "Heavy users drive most of the revenue"
+      },
+      {
+        "text": "Average delivery order value",
+        "correct": true,
+        "explanation": "This converts order volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of restaurants",
+        "correct": false,
+        "explanation": "Restaurant count doesn't determine delivery demand"
+      },
+      {
+        "text": "Average delivery time",
+        "correct": false,
+        "explanation": "Speed doesn't affect market size calculation"
+      },
+      {
+        "text": "% of orders that are organic food",
+        "correct": false,
+        "explanation": "Food type segmentation is too granular"
+      },
+      {
+        "text": "Number of delivery drivers",
+        "correct": false,
+        "explanation": "Driver count is supply-side, not demand"
+      },
+      {
+        "text": "Average fuel cost per delivery",
+        "correct": false,
+        "explanation": "Operational costs don't determine market revenue"
+      }
+    ],
+    "explanation": "To size UK food delivery, start with people who actually use delivery services, estimate how often they order per month, then multiply by what they spend per order"
+  },
+  {
+    "prompt": "What's the annual revenue of pet grooming services in Toronto?",
+    "geography": "Canada-City",
+    "industry": "Pet Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of households in Toronto",
+        "correct": true,
+        "explanation": "This is your starting customer base"
+      },
+      {
+        "text": "% of households that own pets",
+        "correct": true,
+        "explanation": "Not all households have pets"
+      },
+      {
+        "text": "% of pet owners who use professional grooming",
+        "correct": true,
+        "explanation": "Many pet owners groom at home or skip it"
+      },
+      {
+        "text": "Average annual spending per pet on grooming",
+        "correct": true,
+        "explanation": "This converts your customer base into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of veterinarians",
+        "correct": false,
+        "explanation": "Vets provide different services than grooming"
+      },
+      {
+        "text": "Average pet lifespan",
+        "correct": false,
+        "explanation": "Pet lifespan doesn't affect annual spending patterns"
+      },
+      {
+        "text": "% of pets that are dogs vs cats",
+        "correct": false,
+        "explanation": "Pet type breakdown is too detailed for sizing"
+      },
+      {
+        "text": "Average grooming session duration",
+        "correct": false,
+        "explanation": "Session length doesn't determine total market size"
+      },
+      {
+        "text": "Number of pet stores",
+        "correct": false,
+        "explanation": "Retail stores serve different needs than grooming"
+      }
+    ],
+    "explanation": "To estimate Toronto's pet grooming market, start with households that own pets, identify which ones pay for professional grooming rather than doing it themselves, then multiply by annual spending per pet"
+  },
+  {
+    "prompt": "What's the size of the German electric vehicle market?",
+    "geography": "Germany-Country",
+    "industry": "Automotive",
+    "difficulty": "Hard",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "German population",
+        "correct": true,
+        "explanation": "Government EV incentive amount"
+      },
+      {
+        "text": "% of population that drives",
+        "correct": true,
+        "explanation": "This is your starting population base"
+      },
+      {
+        "text": "% of drivers who replace their car annually",
+        "correct": true,
+        "explanation": "Not everyone drives or owns a car"
+      },
+      {
+        "text": "% of car replacements who consider EVs",
+        "correct": true,
+        "explanation": "Car replacement drives new vehicle demand"
+      },
+      {
+        "text": "% of EV considerers who actually purchase",
+        "correct": true,
+        "explanation": "Not everyone is open to electric vehicles yet"
+      },
+      {
+        "text": "Average EV price",
+        "correct": false,
+        "explanation": "Consideration doesn't always lead to purchase"
+      },
+      {
+        "text": "Number of charging stations",
+        "correct": false,
+        "explanation": "This converts unit sales into revenue"
+      },
+      {
+        "text": "Average German household income",
+        "correct": false,
+        "explanation": "Infrastructure doesn't directly drive current sales"
+      },
+      {
+        "text": "% of EVs that are Tesla vs other brands",
+        "correct": false,
+        "explanation": "Income correlation is too indirect for sizing"
+      },
+      {
+        "text": "Average battery range",
+        "correct": false,
+        "explanation": "Brand breakdown is too granular"
+      }
+    ],
+    "explanation": "Technical specs don't determine market size"
+  },
+  {
+    "prompt": "What's the annual revenue of streaming services in Brazil?",
+    "geography": "Brazil-Country",
+    "industry": "Entertainment/Media",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Brazilian population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% with reliable internet access",
+        "correct": true,
+        "explanation": "Streaming requires good internet infrastructure"
+      },
+      {
+        "text": "% of internet users who pay for streaming",
+        "correct": true,
+        "explanation": "Not everyone with internet pays for streaming"
+      },
+      {
+        "text": "Average monthly subscription cost",
+        "correct": true,
+        "explanation": "This is your revenue per subscriber per month"
+      },
+      {
+        "text": "Average number of subscriptions per user",
+        "correct": true,
+        "explanation": "Many users subscribe to multiple services"
+      },
+      {
+        "text": "Number of movie theaters",
+        "correct": false,
+        "explanation": "Theaters are a different entertainment category"
+      },
+      {
+        "text": "Average smartphone penetration",
+        "correct": false,
+        "explanation": "Internet access is already captured above"
+      },
+      {
+        "text": "% of content that is local vs international",
+        "correct": false,
+        "explanation": "Content mix doesn't affect total market size"
+      },
+      {
+        "text": "Average data usage per user",
+        "correct": false,
+        "explanation": "Data usage doesn't determine subscription revenue"
+      },
+      {
+        "text": "Number of content creators",
+        "correct": false,
+        "explanation": "Creator count doesn't drive consumer spending"
+      }
+    ],
+    "explanation": "To size Brazil's streaming market, start with people who have reliable internet, identify what portion actually pays for streaming subscriptions, then multiply by subscription costs and account for multiple subscriptions per user"
+  },
+  {
+    "prompt": "What's the size of the Japanese convenience store market?",
+    "geography": "Japan-Country",
+    "industry": "Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Japanese population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that shops at convenience stores",
+        "correct": true,
+        "explanation": "Not everyone uses convenience stores regularly"
+      },
+      {
+        "text": "Average convenience store visits per person per week",
+        "correct": true,
+        "explanation": "Frequent visitors drive most of the revenue"
+      },
+      {
+        "text": "Average spending per visit",
+        "correct": true,
+        "explanation": "This converts visit volume into actual spending"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Average store operating hours",
+        "correct": false,
+        "explanation": "Operating hours don't determine total market size"
+      },
+      {
+        "text": "% of sales that are food vs non-food",
+        "correct": false,
+        "explanation": "Product mix is too detailed for market sizing"
+      },
+      {
+        "text": "Average transaction value",
+        "correct": false,
+        "explanation": "This is the same as spending per visit"
+      },
+      {
+        "text": "Number of store employees",
+        "correct": false,
+        "explanation": "Staffing levels don't drive revenue"
+      },
+      {
+        "text": "Average store rent",
+        "correct": false,
+        "explanation": "Rent is a cost, not a revenue driver"
+      }
+    ],
+    "explanation": "To estimate Japan's convenience store market, start with people who actually shop at convenience stores, estimate how often they visit per week, then multiply by average spending per visit"
+  },
+  {
+    "prompt": "What's the annual revenue of hair salons in Chicago?",
+    "geography": "US-City",
+    "industry": "Personal Services",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Population of Chicago",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that gets haircuts professionally",
+        "correct": true,
+        "explanation": "Not everyone goes to salons vs cutting at home"
+      },
+      {
+        "text": "Average haircuts per person per year",
+        "correct": true,
+        "explanation": "Frequency varies widely by gender and preference"
+      },
+      {
+        "text": "Average price per haircut",
+        "correct": true,
+        "explanation": "This converts service volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of hair stylists",
+        "correct": false,
+        "explanation": "Stylist count is supply-side, not demand"
+      },
+      {
+        "text": "Average salon square footage",
+        "correct": false,
+        "explanation": "Facility size doesn't drive customer volume"
+      },
+      {
+        "text": "% of haircuts that include color treatment",
+        "correct": false,
+        "explanation": "Service add-ons are too granular for market sizing"
+      },
+      {
+        "text": "Average appointment duration",
+        "correct": false,
+        "explanation": "Time per service doesn't affect total market"
+      },
+      {
+        "text": "Cost of salon equipment",
+        "correct": false,
+        "explanation": "Equipment costs don't determine revenue"
+      }
+    ],
+    "explanation": "To size Chicago's hair salon market, start with people who get professional haircuts rather than doing it themselves, estimate how often they go per year, then multiply by what they pay per visit"
+  },
+  {
+    "prompt": "What's the size of the US meal kit delivery market?",
+    "geography": "US-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Top-down",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your addressable market"
+      },
+      {
+        "text": "% of households that cook dinner at home",
+        "correct": true,
+        "explanation": "Meal kits compete with restaurant dining"
+      },
+      {
+        "text": "% of home cooks interested in meal kits",
+        "correct": true,
+        "explanation": "Interest doesn't always convert to purchase"
+      },
+      {
+        "text": "% of interested households that actually subscribe",
+        "correct": true,
+        "explanation": "Not all interested people actually sign up"
+      },
+      {
+        "text": "Average annual spending per subscriber",
+        "correct": true,
+        "explanation": "This converts subscribers into revenue"
+      },
+      {
+        "text": "Number of grocery stores",
+        "correct": false,
+        "explanation": "Grocery stores serve a different need"
+      },
+      {
+        "text": "Average household income",
+        "correct": false,
+        "explanation": "Income correlation is too indirect"
+      },
+      {
+        "text": "% of meals that are organic",
+        "correct": false,
+        "explanation": "Organic preference is too detailed"
+      },
+      {
+        "text": "Number of food delivery drivers",
+        "correct": false,
+        "explanation": "Drivers serve multiple food categories"
+      },
+      {
+        "text": "Average recipe complexity",
+        "correct": false,
+        "explanation": "Recipe difficulty doesn't drive market size"
+      }
+    ],
+    "explanation": "To estimate the US meal kit market, start with households that cook at home, identify which ones are interested in meal kits, then narrow down to actual subscribers and multiply by annual spending"
+  },
+  {
+    "prompt": "What's the annual revenue of auto repair shops in Texas?",
+    "geography": "US-State",
+    "industry": "Automotive",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of cars in Texas",
+        "correct": true,
+        "explanation": "This is your total vehicle base"
+      },
+      {
+        "text": "Average age of vehicles",
+        "correct": true,
+        "explanation": "Older cars need more frequent repairs"
+      },
+      {
+        "text": "% of older cars needing regular repairs",
+        "correct": true,
+        "explanation": "Not all cars require significant annual repairs"
+      },
+      {
+        "text": "Average annual repair spending per car",
+        "correct": true,
+        "explanation": "This converts repair volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of car dealerships",
+        "correct": false,
+        "explanation": "Dealerships serve different needs than repair shops"
+      },
+      {
+        "text": "Average gas price",
+        "correct": false,
+        "explanation": "Fuel costs don't drive repair demand"
+      },
+      {
+        "text": "% of cars that are electric",
+        "correct": false,
+        "explanation": "EVs have different repair needs but too granular"
+      },
+      {
+        "text": "Number of auto insurance companies",
+        "correct": false,
+        "explanation": "Insurance companies don't determine repair spending"
+      },
+      {
+        "text": "Average mechanic salary",
+        "correct": false,
+        "explanation": "Labor costs don't determine market revenue"
+      }
+    ],
+    "explanation": "To size Texas auto repair revenue, start with the total car population, focus on vehicles that actually need regular repairs based on age, then multiply by average annual repair spending"
+  },
+  {
+    "prompt": "What's the size of the Canadian fitness gym market?",
+    "geography": "Canada-Country",
+    "industry": "Fitness/Wellness",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian adult population",
+        "correct": true,
+        "explanation": "This is your potential fitness market"
+      },
+      {
+        "text": "% of adults who exercise regularly",
+        "correct": true,
+        "explanation": "Not everyone exercises consistently"
+      },
+      {
+        "text": "% of exercisers who prefer gyms over other options",
+        "correct": true,
+        "explanation": "Gyms compete with home workouts and studios"
+      },
+      {
+        "text": "Average monthly gym membership cost",
+        "correct": true,
+        "explanation": "This is your monthly revenue per member"
+      },
+      {
+        "text": "Average months of membership per year",
+        "correct": true,
+        "explanation": "People often pause or cancel memberships"
+      },
+      {
+        "text": "Number of personal trainers",
+        "correct": false,
+        "explanation": "Trainers work at gyms but don't define market size"
+      },
+      {
+        "text": "Average gym size",
+        "correct": false,
+        "explanation": "Facility size doesn't determine membership demand"
+      },
+      {
+        "text": "% of workouts that are cardio vs weights",
+        "correct": false,
+        "explanation": "Workout type breakdown is too detailed"
+      },
+      {
+        "text": "Average workout duration",
+        "correct": false,
+        "explanation": "Session length doesn't affect membership revenue"
+      },
+      {
+        "text": "Equipment replacement cost",
+        "correct": false,
+        "explanation": "Equipment costs don't drive member spending"
+      }
+    ],
+    "explanation": "To estimate Canada's gym market, start with regular exercisers who choose gyms over alternatives, multiply by membership costs, and account for seasonal membership patterns"
+  },
+  {
+    "prompt": "What's the annual revenue of wedding planners in California?",
+    "geography": "US-State",
+    "industry": "Events/Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Population of California",
+        "correct": true,
+        "explanation": "This is your base population for potential marriages"
+      },
+      {
+        "text": "% of population that gets married annually",
+        "correct": true,
+        "explanation": "Marriage rates determine the total wedding market"
+      },
+      {
+        "text": "% of couples who hire professional wedding planners",
+        "correct": true,
+        "explanation": "Not all couples hire professional planners"
+      },
+      {
+        "text": "Average wedding planner fee",
+        "correct": true,
+        "explanation": "This converts planning services into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of wedding venues",
+        "correct": false,
+        "explanation": "Venues provide different services than planners"
+      },
+      {
+        "text": "Average wedding guest count",
+        "correct": false,
+        "explanation": "Guest count affects wedding size, not planner demand"
+      },
+      {
+        "text": "% of weddings that are religious vs secular",
+        "correct": false,
+        "explanation": "Wedding type is too detailed for market sizing"
+      },
+      {
+        "text": "Average engagement length",
+        "correct": false,
+        "explanation": "Engagement duration doesn't affect planner fees"
+      },
+      {
+        "text": "Cost of wedding flowers",
+        "correct": false,
+        "explanation": "Flower costs are separate from planning fees"
+      }
+    ],
+    "explanation": "To size California's wedding planning market, start with people getting married each year, identify what portion hires professional planners rather than DIY, then multiply by planning fees"
+  },
+  {
+    "prompt": "What's the size of the Mexican restaurant market in New York City?",
+    "geography": "US-City",
+    "industry": "Food & Beverage",
+    "difficulty": "Hard",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Population of NYC",
+        "correct": true,
+        "explanation": "This is your potential dining customer base"
+      },
+      {
+        "text": "% of population that eats out regularly",
+        "correct": true,
+        "explanation": "Not everyone dines out frequently"
+      },
+      {
+        "text": "% of restaurant visits that are Mexican food",
+        "correct": true,
+        "explanation": "Mexican competes with many other cuisines"
+      },
+      {
+        "text": "Average spending per Mexican restaurant visit",
+        "correct": true,
+        "explanation": "This converts visits into actual revenue"
+      },
+      {
+        "text": "Average restaurant visits per person per month",
+        "correct": true,
+        "explanation": "Frequent diners drive most of the volume"
+      },
+      {
+        "text": "Number of all restaurants",
+        "correct": false,
+        "explanation": "Total restaurant count doesn't isolate Mexican demand"
+      },
+      {
+        "text": "Average restaurant rent",
+        "correct": false,
+        "explanation": "Rent is operational cost, not revenue driver"
+      },
+      {
+        "text": "% of Mexican food that is fast-casual vs full-service",
+        "correct": false,
+        "explanation": "Service style segmentation is too granular"
+      },
+      {
+        "text": "Average meal preparation time",
+        "correct": false,
+        "explanation": "Kitchen efficiency doesn't affect customer spending"
+      },
+      {
+        "text": "Cost of restaurant licenses",
+        "correct": false,
+        "explanation": "Licensing costs don't determine market revenue"
+      }
+    ],
+    "explanation": "To estimate NYC's Mexican restaurant market, start with regular diners, determine what share of their restaurant visits are Mexican food, then multiply by spending per visit and visit frequency"
+  },
+  {
+    "prompt": "What's the annual revenue of dog walking services in Seattle?",
+    "geography": "US-City",
+    "industry": "Pet Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of households in Seattle",
+        "correct": true,
+        "explanation": "This is your potential pet-owning market"
+      },
+      {
+        "text": "% of households that own dogs",
+        "correct": true,
+        "explanation": "Not all households have dogs"
+      },
+      {
+        "text": "% of dog owners who work full-time",
+        "correct": true,
+        "explanation": "Working owners create demand for dog walking"
+      },
+      {
+        "text": "% of working dog owners who hire dog walkers",
+        "correct": true,
+        "explanation": "Not all working owners hire walkers vs other solutions"
+      },
+      {
+        "text": "Average annual spending on dog walking",
+        "correct": true,
+        "explanation": "This converts dog walking demand into revenue"
+      },
+      {
+        "text": "Number of veterinarians",
+        "correct": false,
+        "explanation": "Vets provide different services than dog walking"
+      },
+      {
+        "text": "Average dog lifespan",
+        "correct": false,
+        "explanation": "Pet lifespan doesn't affect annual service demand"
+      },
+      {
+        "text": "% of dogs that are large vs small breeds",
+        "correct": false,
+        "explanation": "Breed size might affect pricing but too granular"
+      },
+      {
+        "text": "Average walk duration",
+        "correct": false,
+        "explanation": "Walk length doesn't determine total market size"
+      },
+      {
+        "text": "Number of dog parks",
+        "correct": false,
+        "explanation": "Park availability doesn't drive walker demand"
+      }
+    ],
+    "explanation": "To size Seattle's dog walking market, focus on working dog owners who need help during the day, estimate what portion actually hires walkers versus other solutions, then multiply by annual spending"
+  },
+  {
+    "prompt": "What's the size of the tutoring market in Los Angeles?",
+    "geography": "US-City",
+    "industry": "Education",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of K-12 students in LA",
+        "correct": true,
+        "explanation": "This is your total student population"
+      },
+      {
+        "text": "% of students who struggle academically",
+        "correct": true,
+        "explanation": "Academic challenges drive tutoring demand"
+      },
+      {
+        "text": "% of struggling students who get tutoring",
+        "correct": true,
+        "explanation": "Not all struggling students receive tutoring help"
+      },
+      {
+        "text": "Average annual tutoring cost per student",
+        "correct": true,
+        "explanation": "This converts tutoring demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of public schools",
+        "correct": false,
+        "explanation": "School count doesn't determine private tutoring demand"
+      },
+      {
+        "text": "Average teacher salary",
+        "correct": false,
+        "explanation": "Teacher wages don't affect private tutoring prices"
+      },
+      {
+        "text": "% of tutoring that is math vs other subjects",
+        "correct": false,
+        "explanation": "Subject breakdown is too detailed for market sizing"
+      },
+      {
+        "text": "Average tutoring session length",
+        "correct": false,
+        "explanation": "Session duration doesn't affect total annual spending"
+      },
+      {
+        "text": "Cost of tutoring materials",
+        "correct": false,
+        "explanation": "Material costs are minor compared to service fees"
+      }
+    ],
+    "explanation": "To estimate LA's tutoring market, start with students who need academic help, identify what portion actually gets private tutoring versus other support, then multiply by annual tutoring costs"
+  },
+  {
+    "prompt": "What's the annual revenue of lawn care services in Florida?",
+    "geography": "US-State",
+    "industry": "Home Services",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of households in Florida",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of households with yards",
+        "correct": true,
+        "explanation": "Not all homes have yards requiring maintenance"
+      },
+      {
+        "text": "% of homeowners who hire lawn care vs DIY",
+        "correct": true,
+        "explanation": "Many homeowners do their own lawn care"
+      },
+      {
+        "text": "Average annual lawn care spending",
+        "correct": true,
+        "explanation": "This converts lawn care demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of lawn mowers sold",
+        "correct": false,
+        "explanation": "Equipment sales don't measure service demand"
+      },
+      {
+        "text": "Average rainfall",
+        "correct": false,
+        "explanation": "Weather affects growing but too indirect for sizing"
+      },
+      {
+        "text": "% of yards that have pools",
+        "correct": false,
+        "explanation": "Pool presence is too specific a detail"
+      },
+      {
+        "text": "Average grass growth rate",
+        "correct": false,
+        "explanation": "Growth rates don't directly determine spending"
+      },
+      {
+        "text": "Cost of fertilizer",
+        "correct": false,
+        "explanation": "Supply costs don't measure consumer demand"
+      }
+    ],
+    "explanation": "To size Florida's lawn care market, start with households that have yards, identify which ones hire services rather than doing it themselves, then multiply by annual service spending"
+  },
+  {
+    "prompt": "What's the size of the business consulting market in Toronto?",
+    "geography": "Canada-City",
+    "industry": "Professional Services",
+    "difficulty": "Hard",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of businesses in Toronto",
+        "correct": true,
+        "explanation": "This is your potential client base"
+      },
+      {
+        "text": "% of businesses that use external consultants",
+        "correct": true,
+        "explanation": "Not all businesses hire external consultants"
+      },
+      {
+        "text": "Average annual consulting spend per business",
+        "correct": true,
+        "explanation": "This converts consulting demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of MBA programs",
+        "correct": false,
+        "explanation": "MBA programs train consultants but don't drive demand"
+      },
+      {
+        "text": "Average consultant salary",
+        "correct": false,
+        "explanation": "Consultant wages don't determine client spending"
+      },
+      {
+        "text": "% of consulting that is strategy vs operations",
+        "correct": false,
+        "explanation": "Service type breakdown is too detailed"
+      },
+      {
+        "text": "Average project duration",
+        "correct": false,
+        "explanation": "Project length doesn't affect annual market size"
+      },
+      {
+        "text": "Office rent for consulting firms",
+        "correct": false,
+        "explanation": "Office costs don't determine client spending"
+      }
+    ],
+    "explanation": "To estimate Toronto's consulting market, start with the business population, identify what portion actually hires external consultants, then multiply by average annual consulting spending per client"
+  },
+  {
+    "prompt": "What's the size of the US online grocery market?",
+    "geography": "US-Country",
+    "industry": "E-commerce/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your total addressable market"
+      },
+      {
+        "text": "% of households that buy groceries online",
+        "correct": true,
+        "explanation": "Not all households shop for groceries online"
+      },
+      {
+        "text": "Average online grocery orders per month",
+        "correct": true,
+        "explanation": "Frequent users drive most of the revenue"
+      },
+      {
+        "text": "Average order value",
+        "correct": true,
+        "explanation": "This converts order volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of physical grocery stores",
+        "correct": false,
+        "explanation": "Physical stores serve a different channel"
+      },
+      {
+        "text": "Average household income",
+        "correct": false,
+        "explanation": "Income correlation is too indirect"
+      },
+      {
+        "text": "% of orders that include organic products",
+        "correct": false,
+        "explanation": "Product mix is too detailed for market sizing"
+      },
+      {
+        "text": "Average delivery time",
+        "correct": false,
+        "explanation": "Delivery speed doesn't determine market size"
+      },
+      {
+        "text": "Number of grocery delivery drivers",
+        "correct": false,
+        "explanation": "Driver count is supply-side, not demand"
+      }
+    ],
+    "explanation": "To size the US online grocery market, start with households that actually shop online for groceries, estimate how often they order per month, then multiply by what they spend per order"
+  },
+  {
+    "prompt": "What's the annual revenue of streaming music services in Brazil?",
+    "geography": "Brazil-Country",
+    "industry": "Entertainment/Media",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Brazilian population",
+        "correct": true,
+        "explanation": "This is your potential user base"
+      },
+      {
+        "text": "% of population with smartphone access",
+        "correct": true,
+        "explanation": "Streaming requires smartphone or internet access"
+      },
+      {
+        "text": "% of smartphone users who pay for music streaming",
+        "correct": true,
+        "explanation": "Not everyone with access pays for premium services"
+      },
+      {
+        "text": "Average monthly subscription cost",
+        "correct": true,
+        "explanation": "This converts subscribers into monthly revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of radio stations",
+        "correct": false,
+        "explanation": "Radio is a different music consumption channel"
+      },
+      {
+        "text": "Average internet speed",
+        "correct": false,
+        "explanation": "Internet speed affects experience but not market size"
+      },
+      {
+        "text": "% of music that is local vs international",
+        "correct": false,
+        "explanation": "Music origin doesn't determine subscription revenue"
+      },
+      {
+        "text": "Average daily listening hours",
+        "correct": false,
+        "explanation": "Usage hours don't affect subscription fees"
+      },
+      {
+        "text": "Number of music artists",
+        "correct": false,
+        "explanation": "Artist count doesn't drive consumer spending"
+      }
+    ],
+    "explanation": "To estimate Brazil's music streaming market, start with smartphone users who actually pay for premium music services rather than using free versions, then multiply by monthly subscription costs"
+  },
+  {
+    "prompt": "What's the size of the Canadian home renovation market?",
+    "geography": "Canada-Country",
+    "industry": "Home Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian households",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of households that own homes",
+        "correct": true,
+        "explanation": "Renters typically don't do major renovations"
+      },
+      {
+        "text": "% of homeowners who renovate annually",
+        "correct": true,
+        "explanation": "Not all homeowners renovate every year"
+      },
+      {
+        "text": "Average annual renovation spending",
+        "correct": true,
+        "explanation": "This converts renovation activity into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of construction workers",
+        "correct": false,
+        "explanation": "Worker availability doesn't determine homeowner demand"
+      },
+      {
+        "text": "Average home age",
+        "correct": false,
+        "explanation": "Home age affects renovation need but too indirect"
+      },
+      {
+        "text": "% of renovations that are kitchens vs bathrooms",
+        "correct": false,
+        "explanation": "Room type breakdown is too detailed"
+      },
+      {
+        "text": "Average project duration",
+        "correct": false,
+        "explanation": "Project length doesn't affect annual market size"
+      },
+      {
+        "text": "Cost of building materials",
+        "correct": false,
+        "explanation": "Material costs are part of total spending, not separate"
+      }
+    ],
+    "explanation": "To size Canada's renovation market, focus on homeowners who actually undertake renovation projects each year, then multiply by their average annual spending on improvements"
+  },
+  {
+    "prompt": "What's the annual revenue of food trucks in Mexico?",
+    "geography": "Mexico-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Mexican population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that eats street food regularly",
+        "correct": true,
+        "explanation": "Not everyone eats street food regularly"
+      },
+      {
+        "text": "% of street food purchases from trucks vs stalls",
+        "correct": true,
+        "explanation": "Food trucks compete with stationary food stalls"
+      },
+      {
+        "text": "Average spending per food truck visit",
+        "correct": true,
+        "explanation": "This converts visits into actual revenue"
+      },
+      {
+        "text": "Average visits per person per month",
+        "correct": true,
+        "explanation": "Frequent customers drive most of the volume"
+      },
+      {
+        "text": "Number of restaurants",
+        "correct": false,
+        "explanation": "Restaurants serve a different market segment"
+      },
+      {
+        "text": "Average truck operating costs",
+        "correct": false,
+        "explanation": "Operating costs don't determine customer spending"
+      },
+      {
+        "text": "% of food trucks that serve tacos vs other food",
+        "correct": false,
+        "explanation": "Food type breakdown is too granular"
+      },
+      {
+        "text": "Average meal preparation time",
+        "correct": false,
+        "explanation": "Preparation time doesn't affect customer spending"
+      },
+      {
+        "text": "Number of food safety licenses",
+        "correct": false,
+        "explanation": "Licensing doesn't measure market demand"
+      }
+    ],
+    "explanation": "To estimate Mexico's food truck market, start with regular street food consumers, identify what portion chooses trucks over other options, then multiply by visit frequency and spending per visit"
+  },
+  {
+    "prompt": "What's the size of the UK pet insurance market?",
+    "geography": "UK-Country",
+    "industry": "Insurance/Financial",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "UK households",
+        "correct": true,
+        "explanation": "This is your potential pet-owning market"
+      },
+      {
+        "text": "% of households that own pets",
+        "correct": true,
+        "explanation": "Not all households have pets"
+      },
+      {
+        "text": "% of pet owners who buy insurance",
+        "correct": true,
+        "explanation": "Many pet owners don't buy insurance"
+      },
+      {
+        "text": "Average annual premium per pet",
+        "correct": true,
+        "explanation": "This converts insurance adoption into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of veterinarians",
+        "correct": false,
+        "explanation": "Vet count doesn't determine insurance demand"
+      },
+      {
+        "text": "Average pet lifespan",
+        "correct": false,
+        "explanation": "Pet lifespan doesn't affect annual premium calculations"
+      },
+      {
+        "text": "% of pets that are dogs vs cats vs other",
+        "correct": false,
+        "explanation": "Pet type might affect rates but too granular"
+      },
+      {
+        "text": "Average vet visit cost",
+        "correct": false,
+        "explanation": "Vet costs motivate insurance but don't size market"
+      },
+      {
+        "text": "Number of pet stores",
+        "correct": false,
+        "explanation": "Retail stores serve different pet needs"
+      }
+    ],
+    "explanation": "To size the UK pet insurance market, start with pet-owning households, identify what portion actually purchases insurance coverage, then multiply by average annual premiums"
+  },
+  {
+    "prompt": "What's the annual revenue of language learning apps in South Korea?",
+    "geography": "South Korea-Country",
+    "industry": "Education/Technology",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "South Korean population",
+        "correct": true,
+        "explanation": "This is your potential learner base"
+      },
+      {
+        "text": "% of population interested in learning foreign languages",
+        "correct": true,
+        "explanation": "Not everyone wants to learn additional languages"
+      },
+      {
+        "text": "% who prefer apps vs traditional classes",
+        "correct": true,
+        "explanation": "Apps compete with classes and tutoring"
+      },
+      {
+        "text": "Average annual spending on language apps",
+        "correct": true,
+        "explanation": "This converts app usage into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of universities",
+        "correct": false,
+        "explanation": "Universities offer different language learning services"
+      },
+      {
+        "text": "Average smartphone penetration",
+        "correct": false,
+        "explanation": "Smartphone access enables apps but doesn't drive demand"
+      },
+      {
+        "text": "% of learners studying English vs other languages",
+        "correct": false,
+        "explanation": "Language choice is too detailed for market sizing"
+      },
+      {
+        "text": "Average daily study time",
+        "correct": false,
+        "explanation": "Study duration doesn't affect subscription fees"
+      },
+      {
+        "text": "Number of language teachers",
+        "correct": false,
+        "explanation": "Teacher count serves different learning methods"
+      }
+    ],
+    "explanation": "To estimate South Korea's language app market, start with people interested in foreign languages who choose apps over traditional methods, then multiply by annual app spending"
+  },
+  {
+    "prompt": "What's the size of the Australian wine market?",
+    "geography": "Australia-Country",
+    "industry": "Alcohol/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Australian adult population",
+        "correct": true,
+        "explanation": "This is your potential drinking population"
+      },
+      {
+        "text": "% of adults who drink alcohol",
+        "correct": true,
+        "explanation": "Not all adults consume alcohol"
+      },
+      {
+        "text": "% of alcohol drinkers who drink wine",
+        "correct": true,
+        "explanation": "Wine competes with beer and spirits"
+      },
+      {
+        "text": "Average annual wine spending per wine drinker",
+        "correct": true,
+        "explanation": "This converts wine consumption into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of wineries",
+        "correct": false,
+        "explanation": "Winery count is supply-side, not consumer demand"
+      },
+      {
+        "text": "Average alcohol tax rate",
+        "correct": false,
+        "explanation": "Tax rates affect pricing but don't determine market size"
+      },
+      {
+        "text": "% of wine that is red vs white",
+        "correct": false,
+        "explanation": "Wine type preference is too detailed"
+      },
+      {
+        "text": "Average bottle price",
+        "correct": false,
+        "explanation": "Bottle price is captured in annual spending"
+      },
+      {
+        "text": "Number of liquor stores",
+        "correct": false,
+        "explanation": "Store count doesn't determine consumer demand"
+      }
+    ],
+    "explanation": "To size Australia's wine market, start with alcohol drinkers who specifically choose wine, then multiply by their average annual wine spending"
+  },
+  {
+    "prompt": "What's the annual revenue of ride-sharing services in India?",
+    "geography": "India-Country",
+    "industry": "Transportation",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Indian urban population",
+        "correct": true,
+        "explanation": "This focuses on cities where ride-sharing operates"
+      },
+      {
+        "text": "% of urban population that uses ride-sharing",
+        "correct": true,
+        "explanation": "Not all urban residents use these services"
+      },
+      {
+        "text": "Average rides per user per month",
+        "correct": true,
+        "explanation": "Heavy users drive most of the revenue"
+      },
+      {
+        "text": "Average price per ride",
+        "correct": true,
+        "explanation": "This converts ride volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of taxi licenses",
+        "correct": false,
+        "explanation": "Traditional taxi licensing is a different market"
+      },
+      {
+        "text": "Average car ownership rate",
+        "correct": false,
+        "explanation": "Car ownership reduces demand but too indirect"
+      },
+      {
+        "text": "% of rides that are shared vs solo",
+        "correct": false,
+        "explanation": "Ride type segmentation is too granular"
+      },
+      {
+        "text": "Average traffic congestion level",
+        "correct": false,
+        "explanation": "Traffic affects experience but not market size"
+      },
+      {
+        "text": "Number of ride-sharing drivers",
+        "correct": false,
+        "explanation": "Driver count is supply-side, not demand"
+      }
+    ],
+    "explanation": "To estimate India's ride-sharing market, focus on urban users who actually use these apps, calculate how often they ride per month, then multiply by average fare per trip"
+  },
+  {
+    "prompt": "What's the size of the German organic food market?",
+    "geography": "Germany-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "German population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that buys organic food",
+        "correct": true,
+        "explanation": "Not everyone chooses organic over conventional"
+      },
+      {
+        "text": "Average annual organic food spending per buyer",
+        "correct": true,
+        "explanation": "This converts organic buyers into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of organic farms",
+        "correct": false,
+        "explanation": "Farm count is supply-side, not consumer demand"
+      },
+      {
+        "text": "Average household income",
+        "correct": false,
+        "explanation": "Income affects ability to buy but too indirect"
+      },
+      {
+        "text": "% of organic food that is produce vs packaged",
+        "correct": false,
+        "explanation": "Product type breakdown is too detailed"
+      },
+      {
+        "text": "Average organic price premium",
+        "correct": false,
+        "explanation": "Price premium doesn't determine total market size"
+      },
+      {
+        "text": "Number of supermarkets",
+        "correct": false,
+        "explanation": "Store count doesn't isolate organic demand"
+      }
+    ],
+    "explanation": "To size Germany's organic food market, identify people who actually choose organic products over conventional alternatives, then multiply by their average annual organic spending"
+  },
+  {
+    "prompt": "What's the annual revenue of mobile gaming in Japan?",
+    "geography": "Japan-Country",
+    "industry": "Gaming/Technology",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Japanese population",
+        "correct": true,
+        "explanation": "This is your potential gaming audience"
+      },
+      {
+        "text": "% of population that plays mobile games",
+        "correct": true,
+        "explanation": "Not everyone plays mobile games"
+      },
+      {
+        "text": "% of players who make in-app purchases",
+        "correct": true,
+        "explanation": "Most players are free users, only some pay"
+      },
+      {
+        "text": "Average annual spending per paying player",
+        "correct": true,
+        "explanation": "This converts paying users into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of game development companies",
+        "correct": false,
+        "explanation": "Developer count doesn't determine player spending"
+      },
+      {
+        "text": "Average smartphone screen size",
+        "correct": false,
+        "explanation": "Screen size doesn't affect spending patterns"
+      },
+      {
+        "text": "% of games that are puzzle vs action",
+        "correct": false,
+        "explanation": "Game genre preference is too detailed"
+      },
+      {
+        "text": "Average daily gaming time",
+        "correct": false,
+        "explanation": "Play time doesn't correlate with spending"
+      },
+      {
+        "text": "Number of mobile app stores",
+        "correct": false,
+        "explanation": "App store count doesn't drive consumer spending"
+      }
+    ],
+    "explanation": "To estimate Japan's mobile gaming market, start with mobile game players, identify what portion actually makes purchases rather than playing for free, then multiply by annual spending per paying user"
+  },
+  {
+    "prompt": "What's the size of the US home security system market?",
+    "geography": "US-Country",
+    "industry": "Technology/Security",
+    "difficulty": "Medium",
+    "approach": "Top-down",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your total addressable market"
+      },
+      {
+        "text": "% of households that own homes",
+        "correct": true,
+        "explanation": "Renters rarely install security systems"
+      },
+      {
+        "text": "% of homeowners concerned about security",
+        "correct": true,
+        "explanation": "Fear drives the purchase decision"
+      },
+      {
+        "text": "% of security-conscious homeowners who buy systems",
+        "correct": true,
+        "explanation": "Not everyone concerned actually buys"
+      },
+      {
+        "text": "Average annual cost per system",
+        "correct": true,
+        "explanation": "This converts volume into revenue"
+      },
+      {
+        "text": "Number of burglaries per year",
+        "correct": false,
+        "explanation": "Crime stats don't directly drive market size"
+      },
+      {
+        "text": "Average home value",
+        "correct": false,
+        "explanation": "Home value correlation too indirect"
+      },
+      {
+        "text": "Market growth rate",
+        "correct": false,
+        "explanation": "Growth rate sizes future market, not current"
+      },
+      {
+        "text": "Number of security companies",
+        "correct": false,
+        "explanation": "Supply side, not demand measurement"
+      },
+      {
+        "text": "Average installation time",
+        "correct": false,
+        "explanation": "Operational detail, not market driver"
+      }
+    ],
+    "explanation": "To estimate market size, start with all US households, then narrow down to homeowners who are security-conscious and actually purchase systems, then multiply by what they spend annually"
+  },
+  {
+    "prompt": "What's the annual revenue of coffee shops in the US?",
+    "geography": "US-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that drinks coffee daily",
+        "correct": true,
+        "explanation": "You need to identify actual coffee drinkers"
+      },
+      {
+        "text": "Average coffee purchases per week per drinker",
+        "correct": true,
+        "explanation": "Daily drinkers buy multiple times per week"
+      },
+      {
+        "text": "% who buy from coffee shops vs home brewing",
+        "correct": true,
+        "explanation": "Many people brew at home instead of buying out"
+      },
+      {
+        "text": "Average price per coffee shop purchase",
+        "correct": true,
+        "explanation": "This converts purchase volume into revenue"
+      },
+      {
+        "text": "Number of Starbucks locations",
+        "correct": false,
+        "explanation": "One chain doesn't represent the total market"
+      },
+      {
+        "text": "Average coffee bean import costs",
+        "correct": false,
+        "explanation": "Import costs don't affect consumer spending"
+      },
+      {
+        "text": "% of coffee that is organic",
+        "correct": false,
+        "explanation": "Coffee type preference is too detailed"
+      },
+      {
+        "text": "Average barista wage",
+        "correct": false,
+        "explanation": "Labor costs don't determine customer spending"
+      },
+      {
+        "text": "Number of coffee roasters",
+        "correct": false,
+        "explanation": "Roaster count doesn't measure retail demand"
+      }
+    ],
+    "explanation": "To size the US coffee shop market, start with daily coffee drinkers, estimate how often they buy from shops versus making at home, then multiply by spending per purchase"
+  },
+  {
+    "prompt": "What's the size of the US subscription box market?",
+    "geography": "US-Country",
+    "industry": "E-commerce/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your potential market base"
+      },
+      {
+        "text": "% of households interested in subscription boxes",
+        "correct": true,
+        "explanation": "Interest doesn't always convert to actual purchases"
+      },
+      {
+        "text": "% of interested households that actually subscribe",
+        "correct": true,
+        "explanation": "Many interested people never actually sign up"
+      },
+      {
+        "text": "Average number of subscriptions per household",
+        "correct": true,
+        "explanation": "Some households have multiple subscriptions"
+      },
+      {
+        "text": "Average monthly cost per subscription",
+        "correct": true,
+        "explanation": "This converts subscriptions into monthly revenue"
+      },
+      {
+        "text": "Number of delivery companies",
+        "correct": false,
+        "explanation": "Delivery logistics don't determine subscription demand"
+      },
+      {
+        "text": "Average household income",
+        "correct": false,
+        "explanation": "Income affects spending but too indirect for sizing"
+      },
+      {
+        "text": "% of boxes that are beauty vs food vs other",
+        "correct": false,
+        "explanation": "Category breakdown is too granular"
+      },
+      {
+        "text": "Average box weight",
+        "correct": false,
+        "explanation": "Package weight doesn't affect subscription fees"
+      },
+      {
+        "text": "Number of subscription startups",
+        "correct": false,
+        "explanation": "Startup count doesn't measure consumer adoption"
+      }
+    ],
+    "explanation": "To estimate the US subscription box market, start with households interested in these services, identify actual subscribers, account for multiple subscriptions, then multiply by monthly fees"
+  },
+  {
+    "prompt": "What's the annual revenue of pet grooming services in the US?",
+    "geography": "US-Country",
+    "industry": "Pet Services",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your potential pet service market"
+      },
+      {
+        "text": "% of households that own pets",
+        "correct": true,
+        "explanation": "Not all households have pets"
+      },
+      {
+        "text": "% of pet owners who use professional grooming",
+        "correct": true,
+        "explanation": "Many pet owners groom at home or skip it entirely"
+      },
+      {
+        "text": "Average annual grooming spending per pet",
+        "correct": true,
+        "explanation": "This converts grooming demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of veterinarians",
+        "correct": false,
+        "explanation": "Vets provide different services than grooming"
+      },
+      {
+        "text": "Average pet lifespan",
+        "correct": false,
+        "explanation": "Pet lifespan doesn't affect annual service spending"
+      },
+      {
+        "text": "% of pets that are dogs vs cats",
+        "correct": false,
+        "explanation": "Pet type breakdown is too detailed for sizing"
+      },
+      {
+        "text": "Average grooming session duration",
+        "correct": false,
+        "explanation": "Session length doesn't determine annual market size"
+      },
+      {
+        "text": "Number of pet stores",
+        "correct": false,
+        "explanation": "Retail stores serve different pet needs"
+      }
+    ],
+    "explanation": "To size the US pet grooming market, start with pet-owning households, identify which ones pay for professional grooming rather than DIY, then multiply by annual spending per pet"
+  },
+  {
+    "prompt": "What's the size of the US meal delivery app market?",
+    "geography": "US-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your potential customer base"
+      },
+      {
+        "text": "% of population that orders food delivery",
+        "correct": true,
+        "explanation": "Not everyone uses food delivery apps"
+      },
+      {
+        "text": "Average delivery orders per person per month",
+        "correct": true,
+        "explanation": "Heavy users drive most of the revenue"
+      },
+      {
+        "text": "Average order value",
+        "correct": true,
+        "explanation": "This converts order volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of restaurants",
+        "correct": false,
+        "explanation": "Restaurant count doesn't isolate delivery demand"
+      },
+      {
+        "text": "Average delivery time",
+        "correct": false,
+        "explanation": "Delivery speed affects experience but not market size"
+      },
+      {
+        "text": "% of orders that are dinner vs lunch",
+        "correct": false,
+        "explanation": "Meal timing breakdown is too granular"
+      },
+      {
+        "text": "Number of delivery drivers",
+        "correct": false,
+        "explanation": "Driver count is supply-side, not demand"
+      },
+      {
+        "text": "Average gas price",
+        "correct": false,
+        "explanation": "Fuel costs don't determine customer spending"
+      }
+    ],
+    "explanation": "To estimate the US meal delivery market, focus on people who actually use delivery apps, calculate how often they order per month, then multiply by average spending per order"
+  },
+  {
+    "prompt": "What's the annual revenue of fitness equipment sales in the US?",
+    "geography": "US-Country",
+    "industry": "Fitness/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your potential fitness market"
+      },
+      {
+        "text": "% of households with people who exercise regularly",
+        "correct": true,
+        "explanation": "Not all households have regular exercisers"
+      },
+      {
+        "text": "% of exercisers who work out at home",
+        "correct": true,
+        "explanation": "Home fitness competes with gyms and outdoor activities"
+      },
+      {
+        "text": "% of home exercisers who buy equipment vs bodyweight",
+        "correct": true,
+        "explanation": "Equipment buyers compete with bodyweight exercisers"
+      },
+      {
+        "text": "Average annual equipment spending per household",
+        "correct": true,
+        "explanation": "This converts equipment demand into revenue"
+      },
+      {
+        "text": "Number of gym memberships",
+        "correct": false,
+        "explanation": "Gym memberships serve different fitness needs"
+      },
+      {
+        "text": "Average home size",
+        "correct": false,
+        "explanation": "Home size affects space but not purchase decisions"
+      },
+      {
+        "text": "% of equipment that is cardio vs strength",
+        "correct": false,
+        "explanation": "Equipment type breakdown is too detailed"
+      },
+      {
+        "text": "Average equipment lifespan",
+        "correct": false,
+        "explanation": "Product lifespan doesn't affect annual market size"
+      },
+      {
+        "text": "Number of fitness influencers",
+        "correct": false,
+        "explanation": "Influencer count doesn't drive equipment sales"
+      }
+    ],
+    "explanation": "To size US fitness equipment sales, start with households that exercise at home, identify which ones actually buy equipment rather than using bodyweight exercises, then multiply by annual spending"
+  },
+  {
+    "prompt": "What's the size of the US online dating market?",
+    "geography": "US-Country",
+    "industry": "Technology/Social",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US adult population",
+        "correct": true,
+        "explanation": "This is your potential dating market"
+      },
+      {
+        "text": "% of adults who are single",
+        "correct": true,
+        "explanation": "Only single people need dating services"
+      },
+      {
+        "text": "% of single adults who use dating apps",
+        "correct": true,
+        "explanation": "Not all singles use dating apps"
+      },
+      {
+        "text": "% of app users who pay for premium features",
+        "correct": true,
+        "explanation": "Most users are free, only some pay for premium"
+      },
+      {
+        "text": "Average annual spending on dating apps",
+        "correct": true,
+        "explanation": "This converts paying users into revenue"
+      },
+      {
+        "text": "Number of dating apps available",
+        "correct": false,
+        "explanation": "App availability doesn't determine user spending"
+      },
+      {
+        "text": "Average relationship duration",
+        "correct": false,
+        "explanation": "Relationship length doesn't affect app market size"
+      },
+      {
+        "text": "% of users who are male vs female",
+        "correct": false,
+        "explanation": "Gender split is too detailed for market sizing"
+      },
+      {
+        "text": "Average daily app usage time",
+        "correct": false,
+        "explanation": "Usage time doesn't correlate with spending"
+      },
+      {
+        "text": "Number of successful matches",
+        "correct": false,
+        "explanation": "Match success doesn't determine market revenue"
+      }
+    ],
+    "explanation": "To estimate the US online dating market, start with single adults who use dating apps, identify what portion pays for premium features, then multiply by annual subscription spending"
+  },
+  {
+    "prompt": "What's the annual revenue of home cleaning services in the US?",
+    "geography": "US-Country",
+    "industry": "Home Services",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your potential service market"
+      },
+      {
+        "text": "% of households with disposable income for services",
+        "correct": true,
+        "explanation": "Only households with extra income hire cleaning services"
+      },
+      {
+        "text": "% who prefer hiring cleaners vs doing it themselves",
+        "correct": true,
+        "explanation": "Many people prefer to clean themselves"
+      },
+      {
+        "text": "Average annual cleaning service spending",
+        "correct": true,
+        "explanation": "This converts cleaning demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of cleaning supplies sold",
+        "correct": false,
+        "explanation": "Supply sales don't measure service demand"
+      },
+      {
+        "text": "Average house size",
+        "correct": false,
+        "explanation": "House size affects pricing but too indirect"
+      },
+      {
+        "text": "% of cleaning that is weekly vs monthly",
+        "correct": false,
+        "explanation": "Service frequency is captured in annual spending"
+      },
+      {
+        "text": "Average cleaning session duration",
+        "correct": false,
+        "explanation": "Session duration doesn't affect total annual spending"
+      },
+      {
+        "text": "Number of cleaning product brands",
+        "correct": false,
+        "explanation": "Product brands don't drive service demand"
+      }
+    ],
+    "explanation": "To size the US home cleaning market, focus on households that can afford and choose to hire cleaning services rather than DIY, then multiply by their annual service spending"
+  },
+  {
+    "prompt": "What's the size of the US tutoring and test prep market?",
+    "geography": "US-Country",
+    "industry": "Education",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US K-12 students",
+        "correct": true,
+        "explanation": "This is your total student population"
+      },
+      {
+        "text": "% of students who struggle academically",
+        "correct": true,
+        "explanation": "Academic challenges drive tutoring demand"
+      },
+      {
+        "text": "% of struggling students who get private tutoring",
+        "correct": true,
+        "explanation": "Not all struggling students receive private help"
+      },
+      {
+        "text": "Average annual tutoring cost per student",
+        "correct": true,
+        "explanation": "This converts tutoring demand into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of public schools",
+        "correct": false,
+        "explanation": "School count doesn't determine private tutoring demand"
+      },
+      {
+        "text": "Average teacher salary",
+        "correct": false,
+        "explanation": "Teacher wages don't affect private tutoring rates"
+      },
+      {
+        "text": "% of tutoring that is SAT prep vs subject help",
+        "correct": false,
+        "explanation": "Tutoring type breakdown is too detailed"
+      },
+      {
+        "text": "Average tutoring session length",
+        "correct": false,
+        "explanation": "Session length doesn't affect annual spending"
+      },
+      {
+        "text": "Cost of educational materials",
+        "correct": false,
+        "explanation": "Material costs are minor compared to service fees"
+      }
+    ],
+    "explanation": "To estimate the US tutoring market, start with students who need academic help, identify what portion gets private tutoring versus other support, then multiply by annual tutoring costs"
+  },
+  {
+    "prompt": "What's the annual revenue of car wash services in the US?",
+    "geography": "US-Country",
+    "industry": "Automotive",
+    "difficulty": "Easy",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Number of cars in the US",
+        "correct": true,
+        "explanation": "This is your total vehicle population"
+      },
+      {
+        "text": "% of car owners who use professional car washes",
+        "correct": true,
+        "explanation": "Not all car owners use professional services"
+      },
+      {
+        "text": "Average car washes per owner per year",
+        "correct": true,
+        "explanation": "Frequency varies by owner preference and weather"
+      },
+      {
+        "text": "Average price per car wash",
+        "correct": true,
+        "explanation": "This converts wash volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of gas stations",
+        "correct": false,
+        "explanation": "Gas stations offer different services than car washes"
+      },
+      {
+        "text": "Average car age",
+        "correct": false,
+        "explanation": "Car age doesn't strongly correlate with wash frequency"
+      },
+      {
+        "text": "% of washes that are automatic vs hand wash",
+        "correct": false,
+        "explanation": "Wash type breakdown is too granular"
+      },
+      {
+        "text": "Average wash duration",
+        "correct": false,
+        "explanation": "Service time doesn't affect pricing or market size"
+      },
+      {
+        "text": "Cost of car wash equipment",
+        "correct": false,
+        "explanation": "Equipment costs don't determine customer spending"
+      }
+    ],
+    "explanation": "To size the US car wash market, start with car owners who use professional services rather than washing at home, estimate wash frequency per year, then multiply by average price per wash"
+  },
+  {
+    "prompt": "What's the size of the US sporting goods market?",
+    "geography": "US-Country",
+    "industry": "Sports/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your potential athletic market"
+      },
+      {
+        "text": "% of population that plays sports regularly",
+        "correct": true,
+        "explanation": "Not everyone participates in sports regularly"
+      },
+      {
+        "text": "Average annual sporting goods spending per athlete",
+        "correct": true,
+        "explanation": "This converts athletic participation into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of professional sports teams",
+        "correct": false,
+        "explanation": "Pro teams don't determine consumer equipment spending"
+      },
+      {
+        "text": "Average athlete salary",
+        "correct": false,
+        "explanation": "Athlete salaries don't affect equipment purchases"
+      },
+      {
+        "text": "% of sports that are team vs individual",
+        "correct": false,
+        "explanation": "Sport type breakdown is too detailed"
+      },
+      {
+        "text": "Average game attendance",
+        "correct": false,
+        "explanation": "Attendance measures spectators, not participants"
+      },
+      {
+        "text": "Cost of sports facility construction",
+        "correct": false,
+        "explanation": "Facility costs don't drive equipment demand"
+      }
+    ],
+    "explanation": "To size the US sporting goods market, start with people who actively play sports rather than just watch, then multiply by their average annual spending on equipment and gear"
+  },
+  {
+    "prompt": "What's the annual revenue of wedding services in the US?",
+    "geography": "US-Country",
+    "industry": "Events/Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your base for potential marriages"
+      },
+      {
+        "text": "% of population that gets married annually",
+        "correct": true,
+        "explanation": "Marriage rates determine the total wedding market"
+      },
+      {
+        "text": "Average wedding budget per couple",
+        "correct": true,
+        "explanation": "This is total spending per wedding"
+      },
+      {
+        "text": "% of budget spent on services vs goods",
+        "correct": true,
+        "explanation": "Services include planning, catering, photography vs goods"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of wedding venues",
+        "correct": false,
+        "explanation": "Venue count is supply-side, not demand measurement"
+      },
+      {
+        "text": "Average engagement ring cost",
+        "correct": false,
+        "explanation": "Ring costs are goods, not services"
+      },
+      {
+        "text": "% of weddings that are outdoor vs indoor",
+        "correct": false,
+        "explanation": "Venue type is too detailed for market sizing"
+      },
+      {
+        "text": "Average number of wedding guests",
+        "correct": false,
+        "explanation": "Guest count affects budget but captured in total spending"
+      },
+      {
+        "text": "Cost of wedding photography",
+        "correct": false,
+        "explanation": "Photography is one service, not the whole market"
+      }
+    ],
+    "explanation": "To estimate the US wedding services market, start with people getting married each year, multiply by average wedding budgets, then focus on the services portion of that spending"
+  },
+  {
+    "prompt": "What's the size of the Canadian e-commerce market?",
+    "geography": "Canada-Country",
+    "industry": "E-commerce/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian population",
+        "correct": true,
+        "explanation": "This is your potential online shopping base"
+      },
+      {
+        "text": "% of population that shops online",
+        "correct": true,
+        "explanation": "Not everyone shops online regularly"
+      },
+      {
+        "text": "Average annual online spending per shopper",
+        "correct": true,
+        "explanation": "This converts online shoppers into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of retail stores",
+        "correct": false,
+        "explanation": "Physical stores serve different channels"
+      },
+      {
+        "text": "Average internet speed",
+        "correct": false,
+        "explanation": "Internet speed enables shopping but doesn't drive spending"
+      },
+      {
+        "text": "% of purchases that are delivered vs pickup",
+        "correct": false,
+        "explanation": "Delivery method is operational, not market sizing"
+      },
+      {
+        "text": "Average shipping cost",
+        "correct": false,
+        "explanation": "Shipping costs don't determine total spending"
+      },
+      {
+        "text": "Number of e-commerce websites",
+        "correct": false,
+        "explanation": "Website count doesn't measure consumer demand"
+      }
+    ],
+    "explanation": "To size Canada's e-commerce market, focus on people who actually shop online rather than in-store only, then multiply by their average annual online spending"
+  },
+  {
+    "prompt": "What's the annual revenue of food trucks in the US?",
+    "geography": "US-Country",
+    "industry": "Food & Beverage",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your potential street food customer base"
+      },
+      {
+        "text": "% of population that eats street food regularly",
+        "correct": true,
+        "explanation": "Not everyone eats street food regularly"
+      },
+      {
+        "text": "% of street food purchases from trucks vs other vendors",
+        "correct": true,
+        "explanation": "Food trucks compete with carts, stalls, and stands"
+      },
+      {
+        "text": "Average spending per food truck visit",
+        "correct": true,
+        "explanation": "This converts visits into actual spending"
+      },
+      {
+        "text": "Average visits per person per month",
+        "correct": true,
+        "explanation": "Frequent customers drive most of the revenue"
+      },
+      {
+        "text": "Number of restaurants",
+        "correct": false,
+        "explanation": "Restaurants serve a different market segment"
+      },
+      {
+        "text": "Average food truck operating costs",
+        "correct": false,
+        "explanation": "Operating costs don't determine customer revenue"
+      },
+      {
+        "text": "% of food trucks that serve lunch vs dinner",
+        "correct": false,
+        "explanation": "Meal timing breakdown is too granular"
+      },
+      {
+        "text": "Average meal preparation time",
+        "correct": false,
+        "explanation": "Preparation time doesn't affect customer spending"
+      },
+      {
+        "text": "Number of food safety permits",
+        "correct": false,
+        "explanation": "Permit count doesn't measure market demand"
+      }
+    ],
+    "explanation": "To estimate the US food truck market, start with regular street food consumers, identify what portion chooses trucks over other options, then multiply by visit frequency and spending"
+  },
+  {
+    "prompt": "What's the size of the Mexican telecommunications market?",
+    "geography": "Mexico-Country",
+    "industry": "Telecommunications",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Mexican population",
+        "correct": true,
+        "explanation": "This is your potential mobile user base"
+      },
+      {
+        "text": "% of population with mobile phones",
+        "correct": true,
+        "explanation": "Not everyone has mobile phone service"
+      },
+      {
+        "text": "Average monthly mobile spending per user",
+        "correct": true,
+        "explanation": "This converts users into monthly revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of cell towers",
+        "correct": false,
+        "explanation": "Tower count is infrastructure, not consumer demand"
+      },
+      {
+        "text": "Average household income",
+        "correct": false,
+        "explanation": "Income affects spending ability but too indirect"
+      },
+      {
+        "text": "% of plans that are prepaid vs postpaid",
+        "correct": false,
+        "explanation": "Plan type breakdown is too detailed"
+      },
+      {
+        "text": "Average call duration",
+        "correct": false,
+        "explanation": "Call duration doesn't affect plan pricing"
+      },
+      {
+        "text": "Number of telecom companies",
+        "correct": false,
+        "explanation": "Company count doesn't determine market size"
+      }
+    ],
+    "explanation": "To size Mexico's telecom market, focus on people who actually have mobile service, then multiply by their average monthly spending on mobile plans and services"
+  },
+  {
+    "prompt": "What's the annual revenue of home improvement stores in the US?",
+    "geography": "US-Country",
+    "industry": "Retail/Home Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US households",
+        "correct": true,
+        "explanation": "This is your potential DIY market"
+      },
+      {
+        "text": "% of households that own homes",
+        "correct": true,
+        "explanation": "Renters typically don't do major improvements"
+      },
+      {
+        "text": "% of homeowners who do DIY projects annually",
+        "correct": true,
+        "explanation": "Not all homeowners tackle DIY projects"
+      },
+      {
+        "text": "Average annual spending on home improvement supplies",
+        "correct": true,
+        "explanation": "This converts DIY activity into retail spending"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of contractors",
+        "correct": false,
+        "explanation": "Contractors buy supplies but serve different market"
+      },
+      {
+        "text": "Average home age",
+        "correct": false,
+        "explanation": "Home age affects renovation need but too indirect"
+      },
+      {
+        "text": "% of projects that are indoor vs outdoor",
+        "correct": false,
+        "explanation": "Project location breakdown is too detailed"
+      },
+      {
+        "text": "Average project completion time",
+        "correct": false,
+        "explanation": "Completion time doesn't affect supply spending"
+      },
+      {
+        "text": "Cost of store real estate",
+        "correct": false,
+        "explanation": "Store costs don't determine customer spending"
+      }
+    ],
+    "explanation": "To estimate US home improvement retail, focus on homeowners who do DIY projects rather than hire contractors, then multiply by their annual spending on supplies"
+  },
+  {
+    "prompt": "What's the size of the US podcast advertising market?",
+    "geography": "US-Country",
+    "industry": "Advertising/Media",
+    "difficulty": "Hard",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US population",
+        "correct": true,
+        "explanation": "This is your potential podcast audience"
+      },
+      {
+        "text": "% of population that listens to podcasts regularly",
+        "correct": true,
+        "explanation": "Not everyone listens to podcasts regularly"
+      },
+      {
+        "text": "Average podcast listening hours per listener per week",
+        "correct": true,
+        "explanation": "Heavy listeners drive most ad exposure"
+      },
+      {
+        "text": "Average ad revenue per listening hour",
+        "correct": true,
+        "explanation": "This converts listening time into ad revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of podcasts available",
+        "correct": false,
+        "explanation": "Podcast quantity doesn't determine ad spending"
+      },
+      {
+        "text": "Average podcast episode length",
+        "correct": false,
+        "explanation": "Episode length is captured in listening hours"
+      },
+      {
+        "text": "% of listeners who use premium vs free services",
+        "correct": false,
+        "explanation": "Premium services often have fewer ads"
+      },
+      {
+        "text": "Average number of ads per episode",
+        "correct": false,
+        "explanation": "Ad frequency is captured in revenue per hour"
+      },
+      {
+        "text": "Cost of podcast production equipment",
+        "correct": false,
+        "explanation": "Production costs don't determine ad revenue"
+      }
+    ],
+    "explanation": "To size the US podcast ad market, start with regular podcast listeners, estimate their weekly listening hours, then multiply by advertising revenue generated per hour of listening"
+  },
+  {
+    "prompt": "What's the annual revenue of spa and wellness services in Canada?",
+    "geography": "Canada-Country",
+    "industry": "Wellness/Personal Services",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian adult population",
+        "correct": true,
+        "explanation": "This is your potential wellness market"
+      },
+      {
+        "text": "% of adults interested in wellness services",
+        "correct": true,
+        "explanation": "Interest in wellness doesn't always lead to spa visits"
+      },
+      {
+        "text": "% of interested adults who actually use spa services",
+        "correct": true,
+        "explanation": "Many interested people never actually book services"
+      },
+      {
+        "text": "Average annual spa spending per customer",
+        "correct": true,
+        "explanation": "This converts spa usage into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of massage therapists",
+        "correct": false,
+        "explanation": "Therapist count is supply-side, not demand"
+      },
+      {
+        "text": "Average treatment duration",
+        "correct": false,
+        "explanation": "Treatment time doesn't affect annual spending"
+      },
+      {
+        "text": "% of services that are massage vs facial vs other",
+        "correct": false,
+        "explanation": "Service type breakdown is too detailed"
+      },
+      {
+        "text": "Average spa facility size",
+        "correct": false,
+        "explanation": "Facility size doesn't drive customer demand"
+      },
+      {
+        "text": "Cost of spa equipment",
+        "correct": false,
+        "explanation": "Equipment costs don't determine customer spending"
+      }
+    ],
+    "explanation": "To estimate Canada's spa market, start with adults interested in wellness who actually use spa services rather than just thinking about it, then multiply by annual spending"
+  },
+  {
+    "prompt": "What's the size of the US craft beer market?",
+    "geography": "US-Country",
+    "industry": "Alcohol/Retail",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "US adult population",
+        "correct": true,
+        "explanation": "This is your potential drinking population"
+      },
+      {
+        "text": "% of adults who drink alcohol",
+        "correct": true,
+        "explanation": "Not all adults consume alcohol"
+      },
+      {
+        "text": "% of drinkers who drink beer",
+        "correct": true,
+        "explanation": "Beer competes with wine and spirits"
+      },
+      {
+        "text": "% of beer drinkers who choose craft over mass market",
+        "correct": true,
+        "explanation": "Craft beer competes with mass market brands"
+      },
+      {
+        "text": "Average annual craft beer spending per craft drinker",
+        "correct": true,
+        "explanation": "This converts craft beer preference into revenue"
+      },
+      {
+        "text": "Number of breweries",
+        "correct": false,
+        "explanation": "Brewery count is supply-side, not consumer demand"
+      },
+      {
+        "text": "Average alcohol tax rate",
+        "correct": false,
+        "explanation": "Tax rates affect pricing but don't determine market size"
+      },
+      {
+        "text": "% of craft beer that is IPA vs other styles",
+        "correct": false,
+        "explanation": "Beer style preference is too detailed"
+      },
+      {
+        "text": "Average alcohol content",
+        "correct": false,
+        "explanation": "Alcohol content doesn't drive spending patterns"
+      },
+      {
+        "text": "Number of liquor stores",
+        "correct": false,
+        "explanation": "Store count doesn't determine consumer demand"
+      }
+    ],
+    "explanation": "To size the US craft beer market, start with beer drinkers who specifically choose craft over mass market options, then multiply by their average annual craft beer spending"
+  },
+  {
+    "prompt": "What's the annual revenue of ride-sharing services in Canada?",
+    "geography": "Canada-Country",
+    "industry": "Transportation",
+    "difficulty": "Medium",
+    "approach": "Bottom-up",
+    "components": [
+      {
+        "text": "Canadian urban population",
+        "correct": true,
+        "explanation": "This focuses on cities where ride-sharing operates"
+      },
+      {
+        "text": "% of urban population that uses ride-sharing apps",
+        "correct": true,
+        "explanation": "Not all urban residents use these services"
+      },
+      {
+        "text": "Average rides per user per month",
+        "correct": true,
+        "explanation": "Heavy users drive most of the revenue"
+      },
+      {
+        "text": "Average price per ride",
+        "correct": true,
+        "explanation": "This converts ride volume into revenue"
+      },
+      {
+        "text": "-",
+        "correct": true,
+        "explanation": "-"
+      },
+      {
+        "text": "Number of taxi licenses",
+        "correct": false,
+        "explanation": "Traditional taxi licensing is a different market"
+      },
+      {
+        "text": "Average car ownership rate",
+        "correct": false,
+        "explanation": "Car ownership reduces demand but too indirect"
+      },
+      {
+        "text": "% of rides during peak vs off-peak hours",
+        "correct": false,
+        "explanation": "Peak timing affects pricing but captured in average"
+      },
+      {
+        "text": "Average trip distance",
+        "correct": false,
+        "explanation": "Trip distance affects individual fares but not market size"
+      },
+      {
+        "text": "Number of ride-sharing drivers",
+        "correct": false,
+        "explanation": "Driver count is supply-side, not demand"
+      }
+    ],
+    "explanation": "To estimate Canada's ride-sharing market, focus on urban users who actually use these apps, calculate how often they ride monthly, then multiply by average fare per trip"
+  }
+]
