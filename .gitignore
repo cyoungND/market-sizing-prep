@@ -32,8 +32,32 @@ yarn-error.*
 
 # local env files
 .env*.local
+.env
 
 # typescript
 *.tsbuildinfo
+
+# Security - prevent accidental commit of sensitive files
+*debug*.js
+*test*.js
+*.log
+*.token
+*.secret
+*.key
+*.pem
+*.crt
+*.p12
+*.jks
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backend specific
+backend/.env
+backend/prisma/dev.db*
+backend/uploads/
+backend/logs/
 
 app-example
