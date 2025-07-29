@@ -1,0 +1,86 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  sessions Session[]
+
+  @@map("users")
+}
+
+model Question {
+  id         String      @id @default(cuid())
+  prompt     String
+  components Component[]
+  summary    String?
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  // Relations
+  responses Response[]
+
+  @@map("questions")
+}
+
+model Component {
+  id         String  @id @default(cuid())
+  text       String
+  correct    Boolean
+  explanation String?
+  questionId String
+  
+  // Relations
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("components")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String
+  startedAt DateTime @default(now())
+  endedAt   DateTime?
+  completed Boolean  @default(false)
+  
+  // Performance metrics
+  totalQuestions Int @default(0)
+  correctAnswers Int @default(0)
+  totalAttempts  Int @default(0)
+
+  // Relations
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  responses Response[]
+
+  @@map("sessions")
+}
+
+model Response {
+  id         String   @id @default(cuid())
+  sessionId  String
+  session   Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  questionId String
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  selectedComponents String // JSON string of component IDs
+  correct    Boolean
+  attempts   Int      @default(1)
+  timeSpent  Int      // Time in seconds
+  createdAt DateTime @default(now())
+
+  @@map("responses")
+}
