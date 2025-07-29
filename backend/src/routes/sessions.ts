@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import { prisma } from '../config/database';
 import { authenticateToken, AuthRequest } from '../middleware/auth';
+import { analyticsService } from '../services/analytics';
 
 const router = Router();
 
@@ -98,6 +99,16 @@ router.post('/:sessionId/responses', authenticateToken, async (req: AuthRequest,
       }
     });
 
+    // Track analytics for this response
+    console.log(`📊 Tracking analytics for user ${req.user!.id}: ${correct ? 'correct' : 'incorrect'} answer`);
+    await analyticsService.updateUserStats({
+      userId: req.user!.id,
+      questionId,
+      correct,
+      timeSpent: timeSpent || 0,
+      attempts
+    });
+
     res.status(201).json({
       message: 'Response recorded successfully',
       response: {
@@ -161,6 +172,10 @@ router.patch('/:sessionId/end', authenticateToken, async (req: AuthRequest, res)
           .filter(r => r.timeSpent)
           .reduce((sum, r) => sum + (r.timeSpent || 0), 0) / updatedSession.responses.length
       : 0;
+
+    // Track session completion analytics
+    console.log(`🏁 Tracking session completion for user ${req.user!.id}: ${completed ? 'completed' : 'abandoned'}`);
+    await analyticsService.updateSessionStats(req.user!.id, completed);
 
     res.json({
       message: 'Session ended successfully',

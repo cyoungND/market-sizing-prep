@@ -19,7 +19,9 @@ model User {
   updatedAt DateTime @updatedAt
 
   // Relations
-  sessions Session[]
+  sessions   Session[]
+  stats      UserStats?
+  dailyStats DailyStats[]
 
   @@map("users")
 }
@@ -83,4 +85,69 @@ model Response {
   createdAt DateTime @default(now())
 
   @@map("responses")
+}
+
+// User Statistics for Analytics Dashboard
+model UserStats {
+  id     String @id @default(cuid())
+  userId String @unique
+  
+  // Overall Performance Metrics
+  totalQuestions    Int @default(0)
+  totalCorrect      Int @default(0)
+  totalAttempts     Int @default(0)
+  accuracy          Float @default(0.0) // Calculated: totalCorrect / totalAttempts
+  
+  // Streak Tracking
+  currentStreak     Int @default(0)     // Current consecutive correct answers
+  longestStreak     Int @default(0)     // Best streak ever achieved
+  lastStreakDate    DateTime?           // When current streak was last updated
+  
+  // Timing Analytics
+  averageTime       Float @default(0.0) // Average time per question (seconds)
+  fastestTime       Int?                // Fastest correct answer (seconds)
+  totalTimeSpent    Int @default(0)     // Total time across all questions
+  
+  // Session Analytics
+  totalSessions     Int @default(0)
+  completedSessions Int @default(0)
+  
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@map("user_stats")
+}
+
+// Daily Performance Tracking for Historical Trends
+model DailyStats {
+  id     String @id @default(cuid())
+  userId String
+  date   DateTime
+  
+  // Daily Metrics
+  questionsAnswered Int @default(0)
+  correctAnswers    Int @default(0)
+  totalAttempts     Int @default(0)
+  timeSpent         Int @default(0) // Total seconds spent
+  sessionsPlayed    Int @default(0)
+  
+  // Daily Performance
+  dailyAccuracy     Float @default(0.0)
+  averageTimePerQ   Float @default(0.0)
+  
+  // Streak on this day
+  streakAtEndOfDay  Int @default(0)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  // Relations
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, date])
+  @@map("daily_stats")
 }
