@@ -5,10 +5,10 @@ import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 
 // Import routes
+import analyticsRoutes from './routes/analytics';
 import authRoutes from './routes/auth';
 import questionRoutes from './routes/questions';
 import sessionRoutes from './routes/sessions';
-import analyticsRoutes from './routes/analytics';
 
 // Load environment variables
 dotenv.config();
