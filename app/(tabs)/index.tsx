@@ -1,16 +1,11 @@
 import { useRouter } from 'expo-router';
 import { Text, View, ScrollView } from 'react-native';
-import AnalyticsDashboard from '@/components/AnalyticsDashboard';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { GlobalStyles, Typography } from '@/constants/Styles';
 import { Colors } from '@/constants/Colors';
 
 export default function HomeScreen() {
   const router = useRouter();
-
-  const handleViewAnalytics = () => {
-    router.push('/(tabs)/analytics');
-  };
 
   return (
     <ScrollView style={GlobalStyles.screenWelcome}>
@@ -19,8 +14,9 @@ export default function HomeScreen() {
         <Text style={[GlobalStyles.subtitle, GlobalStyles.subtitleDark, styles.subtitleText]}>Sharpen your skills with intuitive practice!</Text>
       </View>
 
-      <View style={[GlobalStyles.cardOnDark, styles.analyticsContainer]}>
-        <AnalyticsDashboard compact onViewDetails={handleViewAnalytics} />
+      {/* Logo Placeholder */}
+      <View style={styles.logoContainer}>
+        <Text style={[Typography.sectionHeader, styles.logoText]}>Market Mentor</Text>
       </View>
 
       <View style={GlobalStyles.buttonsContainer}>
@@ -31,9 +27,9 @@ export default function HomeScreen() {
         />
         
         <AnimatedButton
-          title="View Full Analytics"
+          title="View Analytics"
           variant="secondary-dark"
-          onPress={handleViewAnalytics}
+          onPress={() => router.push('/(tabs)/analytics')}
         />
       </View>
     </ScrollView>
@@ -51,7 +47,15 @@ const styles = {
   subtitleText: {
     fontFamily: 'Inter',
   },
-  analyticsContainer: {
-    marginBottom: 32,
+  logoContainer: {
+    alignItems: 'center' as const,
+    marginBottom: 48,
+    paddingVertical: 32,
+  },
+  logoText: {
+    color: Colors.goldenYellow,
+    fontFamily: 'Inter',
+    letterSpacing: 1,
+    opacity: 0.8,
   },
 };

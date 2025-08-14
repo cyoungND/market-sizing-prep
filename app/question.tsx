@@ -7,6 +7,7 @@ import AnimatedButton from '../components/ui/AnimatedButton';
 import AnimatedQuizCard from '../components/ui/AnimatedQuizCard';
 import AnimatedProgressBar from '../components/ui/AnimatedProgressBar';
 import AnimatedIcon from '../components/ui/AnimatedIcon';
+import QuizCompletionModal from '../components/QuizCompletionModal';
 import { Colors } from '../constants/Colors';
 import { GlobalStyles, Typography } from '../constants/Styles';
 
@@ -35,6 +36,8 @@ export default function QuestionScreen() {
   const [tries, setTries] = useState(0);
   const [showResult, setShowResult] = useState<'none' | 'correct' | 'fail' | 'explanation'>('none');
   const [feedback, setFeedback] = useState('');
+  const [showCompletionModal, setShowCompletionModal] = useState(false);
+  const [questionStartTime, setQuestionStartTime] = useState(Date.now());
   // Performance tracking
   const [numCorrect, setNumCorrect] = useState(0);
   const [numAttempted, setNumAttempted] = useState(0);
@@ -63,6 +66,8 @@ export default function QuestionScreen() {
       setTries(0);
       setShowResult('none');
       setFeedback('');
+      setShowCompletionModal(false);
+      setQuestionStartTime(Date.now());
     }
   }, [current, sessionQuestions]);
 
@@ -83,6 +88,9 @@ export default function QuestionScreen() {
     const allCorrect =
       selectedCorrect.length === correctIndices.length &&
       selectedWrong.length === 0;
+    
+    const completionTime = Math.round((Date.now() - questionStartTime) / 1000);
+    
     if (allCorrect) {
       setShowResult('correct');
       setFeedback('Great job!');
@@ -91,6 +99,8 @@ export default function QuestionScreen() {
         setNumAttempted(n => n + 1);
         setTriesPerQuestion(arr => [...arr, tries + 1]);
       }
+      // Show completion modal for wins
+      setTimeout(() => setShowCompletionModal(true), 800);
     } else {
       if (tries < 2) {
         setTries(tries + 1);
@@ -102,8 +112,20 @@ export default function QuestionScreen() {
           setNumAttempted(n => n + 1);
           setTriesPerQuestion(arr => [...arr, tries + 1]);
         }
+        // Show completion modal for failures
+        setTimeout(() => setShowCompletionModal(true), 800);
       }
     }
+  };
+
+  const handleShowExplanation = () => {
+    setShowCompletionModal(false);
+    setShowResult('explanation');
+  };
+
+  const handleBackToHome = () => {
+    setShowCompletionModal(false);
+    router.back();
   };
 
   const goToNext = () => {
@@ -264,7 +286,7 @@ export default function QuestionScreen() {
           />
         )}
         
-        {(showResult === 'correct' || showResult === 'fail') && (
+        {(showResult === 'correct' || showResult === 'fail') && !showCompletionModal && (
           <AnimatedButton
             title="Show Explanation"
             onPress={() => setShowResult('explanation')}
@@ -272,12 +294,25 @@ export default function QuestionScreen() {
           />
         )}
         
-        <AnimatedButton
-          title="Back to Home"
-          onPress={() => router.back()}
-          variant="secondary-light"
-        />
+        {!showCompletionModal && (
+          <AnimatedButton
+            title="Back to Home"
+            onPress={() => router.back()}
+            variant="secondary-light"
+          />
+        )}
       </Animated.View>
+
+      {/* Quiz Completion Modal */}
+      <QuizCompletionModal
+        visible={showCompletionModal}
+        isWin={showResult === 'correct'}
+        completionTimeSeconds={Math.round((Date.now() - questionStartTime) / 1000)}
+        correctGuesses={showResult === 'correct' ? 5 : selected.filter(i => shuffled[i]?.correct).length}
+        totalGuesses={selected.length}
+        onShowExplanation={handleShowExplanation}
+        onBackToHome={handleBackToHome}
+      />
     </View>
   );
 }
