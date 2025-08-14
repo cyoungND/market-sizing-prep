@@ -1,7 +1,14 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, ScrollView, Text, View } from 'react-native';
+import Animated, { FadeInDown, FadeInUp, SlideInLeft } from 'react-native-reanimated';
 import questions from '../assets/questions.json';
+import AnimatedButton from '../components/ui/AnimatedButton';
+import AnimatedQuizCard from '../components/ui/AnimatedQuizCard';
+import AnimatedProgressBar from '../components/ui/AnimatedProgressBar';
+import AnimatedIcon from '../components/ui/AnimatedIcon';
+import { Colors } from '../constants/Colors';
+import { GlobalStyles, Typography } from '../constants/Styles';
 
 // Helper to shuffle array
 function shuffle(array: any[]) {
@@ -60,7 +67,11 @@ export default function QuestionScreen() {
   }, [current, sessionQuestions]);
 
   if (sessionQuestions.length === 0) {
-    return <View style={styles.container}><Text>Loading questions...</Text></View>;
+    return (
+      <View style={GlobalStyles.screenQuestion}>
+        <Text style={[Typography.bodyText, { color: Colors.textPrimaryLight }]}>Loading questions...</Text>
+      </View>
+    );
   }
 
   const handleCheck = () => {
@@ -115,25 +126,46 @@ export default function QuestionScreen() {
   if (showResult === 'explanation') {
     const q = sessionQuestions[current];
     return (
-      <ScrollView contentContainerStyle={styles.explanationContainer}>
-        <Text style={styles.prompt}>{q.prompt}</Text>
-        <Text style={styles.explanationTitle}>Framework Explanations</Text>
-        {q.components
-          .filter(c => c.text && c.text.trim() !== '' && c.text.trim() !== '-')
-          .map((c, idx) => (
-            <View key={idx} style={[styles.explanationBox, {backgroundColor: c.correct ? '#b4f2c3' : '#f7b4b4'}]}>
-              <Text style={styles.explanationComponent}>{c.text}</Text>
-              <Text style={styles.explanationText}>{c.explanation}</Text>
-            </View>
-          ))}
-        <Text style={styles.explanationSummary}>{q.explanation}</Text>
-        <TouchableOpacity style={styles.button} onPress={goToNext}>
-          <Text style={styles.buttonText}>Next Question</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={[styles.button, { backgroundColor: '#aaa' }]} onPress={() => router.back()}>
-          <Text style={styles.buttonText}>Back to Home</Text>
-        </TouchableOpacity>
-      </ScrollView>
+      <View style={GlobalStyles.screenQuestion}>
+        <ScrollView contentContainerStyle={styles.explanationContainer}>
+          <Animated.View entering={FadeInUp.delay(200)}>
+            <Text style={[Typography.sectionHeader, { color: Colors.textPrimaryLight, textAlign: 'center', fontFamily: 'Inter' }]}>{q.prompt}</Text>
+          </Animated.View>
+          
+          <Animated.View entering={FadeInUp.delay(400)}>
+            <Text style={[Typography.sectionHeader, { color: Colors.textPrimaryLight, textAlign: 'center', fontFamily: 'Inter' }]}>Framework Explanations</Text>
+          </Animated.View>
+          
+          {q.components
+            .filter((c: any) => c.text && c.text.trim() !== '' && c.text.trim() !== '-')
+            .map((c: any, idx: number) => (
+              <Animated.View 
+                key={idx} 
+                entering={FadeInDown.delay(600 + idx * 100)}
+                style={[GlobalStyles.cardOnLight, styles.explanationBox, { 
+                  backgroundColor: c.correct ? Colors.secondaryTeal + '20' : Colors.coralRed + '20',
+                  borderColor: c.correct ? Colors.secondaryTeal : Colors.coralRed,
+                  borderWidth: 1,
+                }]}
+              >
+                <Text style={[Typography.bodyText, { color: Colors.textPrimaryLight, fontWeight: '600', fontFamily: 'Inter' }]}>{c.text}</Text>
+                <Text style={[Typography.smallText, { color: Colors.textSecondaryLight, fontFamily: 'Inter' }]}>{c.explanation}</Text>
+              </Animated.View>
+            ))}
+          
+          <Animated.View entering={FadeInUp.delay(800)}>
+            <Text style={[Typography.bodyText, { color: Colors.textSecondaryLight, textAlign: 'center', fontFamily: 'Inter' }]}>{q.summary}</Text>
+          </Animated.View>
+          
+          <Animated.View entering={FadeInUp.delay(1000)}>
+            <AnimatedButton
+              title="Next Question"
+              onPress={goToNext}
+              variant="primary-light"
+            />
+          </Animated.View>
+        </ScrollView>
+      </View>
     );
   }
 
@@ -142,151 +174,145 @@ export default function QuestionScreen() {
     c => c.text && c.text.trim() !== '' && c.text.trim() !== '-'
   );
 
+  const progress = (current + 1) / sessionQuestions.length;
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.prompt}>{sessionQuestions[current].prompt}</Text>
-      <FlatList
-        data={visibleComponents}
-        keyExtractor={(_, i) => i.toString()}
-        numColumns={numColumns}
-        renderItem={({ item, index }) => {
-          const isSelected = selected.includes(index);
-          let backgroundColor = '#fff';
-          if (showResult === 'fail') {
-            backgroundColor = item.correct ? '#b4f2c3' : '#f7b4b4';
-          } else if (showResult === 'correct') {
-            backgroundColor = item.correct ? '#b4f2c3' : '#fff';
-          } else if (isSelected) {
-            backgroundColor = '#d0e7ff';
-          }
-          return (
-            <TouchableOpacity
-              style={[styles.option, { backgroundColor }]}
-              onPress={() => {
-                if (showResult === 'none') {
-                  setSelected(
-                    isSelected
-                      ? selected.filter(i => i !== index)
-                      : [...selected, index]
-                  );
-                }
-              }}
-              disabled={showResult !== 'none'}
-            >
-              <Text style={styles.optionText}>
-                {item.text}
-              </Text>
-            </TouchableOpacity>
-          );
-        }}
-        contentContainerStyle={styles.grid}
-      />
-      {feedback ? <Text style={styles.feedback}>{feedback}</Text> : null}
-      {showResult === 'none' && (
-        <TouchableOpacity style={styles.button} onPress={handleCheck} disabled={selected.length === 0}>
-          <Text style={styles.buttonText}>Check Answer</Text>
-        </TouchableOpacity>
+    <View style={GlobalStyles.screenQuestion}>
+      {/* Header with progress */}
+      <Animated.View entering={FadeInUp.delay(100)} style={styles.header}>
+        <Text style={[Typography.sectionHeader, { color: Colors.textPrimaryLight, textAlign: 'center', fontFamily: 'Inter' }]}>{sessionQuestions[current].prompt}</Text>
+        {isSession && (
+          <View style={styles.progressContainer}>
+            <Text style={[Typography.smallText, { color: Colors.textSecondaryLight, textAlign: 'center', fontFamily: 'Inter' }]}>
+              Question {current + 1} of {sessionQuestions.length}
+            </Text>
+            <AnimatedProgressBar progress={progress} height={6} />
+          </View>
+        )}
+      </Animated.View>
+
+      {/* Quiz Cards */}
+      <Animated.View entering={FadeInDown.delay(300)} style={styles.cardsContainer}>
+        <FlatList
+          data={visibleComponents}
+          keyExtractor={(_, i) => i.toString()}
+          numColumns={numColumns}
+          renderItem={({ item, index }) => {
+            const isSelected = selected.includes(index);
+            const isCorrect = showResult === 'correct' && item.correct;
+            const isIncorrect = isSelected && !item.correct && (showResult === 'fail' || showResult === 'correct');
+            
+            return (
+              <Animated.View 
+                entering={FadeInDown.delay(400 + index * 100)}
+                style={styles.cardWrapper}
+              >
+                <AnimatedQuizCard
+                  onPress={() => {
+                    if (showResult === 'none') {
+                      setSelected(
+                        isSelected
+                          ? selected.filter(i => i !== index)
+                          : [...selected, index]
+                      );
+                    }
+                  }}
+                  isSelected={isSelected}
+                  isCorrect={isCorrect}
+                  isIncorrect={isIncorrect}
+                  disabled={showResult !== 'none'}
+                >
+                  {item.text}
+                </AnimatedQuizCard>
+              </Animated.View>
+            );
+          }}
+          contentContainerStyle={styles.modernGrid}
+          showsVerticalScrollIndicator={false}
+        />
+      </Animated.View>
+
+      {/* Feedback */}
+      {feedback && (
+        <Animated.View entering={FadeInUp.delay(200)} style={styles.feedbackContainer}>
+          <Text style={[
+            Typography.bodyText,
+            {
+              color: Colors.textPrimaryLight,
+              textAlign: 'center',
+              fontFamily: 'Inter',
+              paddingVertical: 12,
+              paddingHorizontal: 20,
+              borderRadius: 12,
+              backgroundColor: showResult === 'correct' ? Colors.secondaryTeal + '20' : 
+                             showResult === 'fail' ? Colors.coralRed + '20' : Colors.bgCardWhite,
+            }
+          ]}>
+            {feedback}
+          </Text>
+        </Animated.View>
       )}
-      {(showResult === 'correct' || showResult === 'fail') && (
-        <TouchableOpacity style={styles.button} onPress={() => setShowResult('explanation')}>
-          <Text style={styles.buttonText}>Show Explanation</Text>
-        </TouchableOpacity>
-      )}
-      <TouchableOpacity style={[styles.button, { backgroundColor: '#aaa' }]} onPress={() => router.back()}>
-        <Text style={styles.buttonText}>Back to Home</Text>
-      </TouchableOpacity>
+
+      {/* Action Buttons */}
+      <Animated.View entering={FadeInUp.delay(600)} style={GlobalStyles.buttonsContainer}>
+        {showResult === 'none' && (
+          <AnimatedButton
+            title="Check Answer"
+            onPress={handleCheck}
+            variant="primary-light"
+            style={{ opacity: selected.length === 0 ? 0.5 : 1 }}
+          />
+        )}
+        
+        {(showResult === 'correct' || showResult === 'fail') && (
+          <AnimatedButton
+            title="Show Explanation"
+            onPress={() => setShowResult('explanation')}
+            variant="primary-light"
+          />
+        )}
+        
+        <AnimatedButton
+          title="Back to Home"
+          onPress={() => router.back()}
+          variant="secondary-light"
+        />
+      </Animated.View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 24,
-    backgroundColor: '#f7fafc',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  prompt: {
-    fontSize: 20,
-    fontWeight: 'bold',
+const styles = {
+  header: {
     marginBottom: 24,
-    textAlign: 'center',
   },
-  grid: {
-    alignItems: 'stretch',
-    justifyContent: 'center',
-    marginBottom: 16,
+  progressContainer: {
+    marginTop: 16,
   },
-  option: {
-    width: '48%',
-    margin: '1%',
-    padding: 18,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#d0d0d0',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
+  cardsContainer: {
+    flex: 1,
+    marginBottom: 20,
   },
-  optionText: {
-    fontSize: 16,
-    textAlign: 'center',
+  modernGrid: {
+    paddingHorizontal: 4,
   },
-  button: {
-    backgroundColor: '#3478f6',
-    paddingVertical: 14,
-    paddingHorizontal: 40,
-    borderRadius: 10,
-    marginTop: 14,
-    alignSelf: 'center',
+  cardWrapper: {
+    width: '48%' as const,
+    marginHorizontal: 4,
+    marginBottom: 12,
   },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 18,
-    textAlign: 'center',
-  },
-  feedback: {
-    fontSize: 16,
-    color: '#d9534f',
-    marginTop: 12,
-    marginBottom: 8,
-    textAlign: 'center',
+  feedbackContainer: {
+    marginBottom: 20,
+    paddingHorizontal: 16,
   },
   explanationContainer: {
     padding: 24,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    backgroundColor: '#f7fafc',
-  },
-  explanationTitle: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginTop: 24,
-    marginBottom: 12,
-    textAlign: 'center',
+    alignItems: 'center' as const,
+    justifyContent: 'flex-start' as const,
+    minHeight: '100%' as const,
   },
   explanationBox: {
-    padding: 14,
-    borderRadius: 10,
-    marginVertical: 6,
-    width: '100%',
+    marginVertical: 8,
+    width: '100%' as const,
   },
-  explanationComponent: {
-    fontWeight: 'bold',
-    fontSize: 16,
-    marginBottom: 4,
-  },
-  explanationText: {
-    fontSize: 15,
-    color: '#333',
-  },
-  explanationSummary: {
-    fontSize: 16,
-    marginTop: 16,
-    marginBottom: 24,
-    textAlign: 'center',
-    color: '#222',
-  },
-});
+};
