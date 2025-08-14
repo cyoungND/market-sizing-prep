@@ -11,8 +11,11 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  View
+  View,
+  SafeAreaView
 } from 'react-native';
+import { Colors } from '@/constants/Colors';
+import { Typography, GlobalStyles, Spacing } from '@/constants/Styles';
 
 const { width } = Dimensions.get('window');
 
@@ -94,7 +97,7 @@ export default function AnalyticsScreen() {
     <ScrollView style={styles.tabContent} showsVerticalScrollIndicator={false}>
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Performance Overview</Text>
-        <View style={styles.statsGrid}>
+        <View style={styles.statsGrid2x2}>
           {renderStatCard('Accuracy', `${userStats?.averageAccuracy.toFixed(1)}%`, 'Overall performance', 'target')}
           {renderStatCard('Current Streak', userStats?.currentStreak || 0, 'Correct in a row', 'flame.fill')}
           {renderStatCard('Sessions', `${userStats?.completedSessions}/${userStats?.totalSessions}`, 'Completed', 'checkmark.circle.fill')}
@@ -104,27 +107,29 @@ export default function AnalyticsScreen() {
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>Achievements</Text>
-        <View style={styles.achievementCard}>
-          <View style={styles.achievementHeader}>
-            <IconSymbol name="trophy.fill" size={24} color="#FFD700" />
-            <Text style={styles.achievementTitle}>Longest Streak</Text>
+        <View style={styles.achievementsGrid}>
+          <View style={[styles.achievementCard, styles.achievementCardCompact]}>
+            <View style={styles.achievementHeader}>
+              <IconSymbol name="trophy.fill" size={20} color={Colors.goldenYellow} />
+              <Text style={styles.achievementTitle}>Longest Streak</Text>
+            </View>
+            <Text style={styles.achievementValue}>{userStats?.longestStreak}</Text>
+            <Text style={styles.achievementSubtitle}>questions</Text>
           </View>
-          <Text style={styles.achievementValue}>{userStats?.longestStreak} questions</Text>
-          <Text style={styles.achievementSubtitle}>Your best performance!</Text>
-        </View>
-        
-        <View style={styles.achievementCard}>
-          <View style={styles.achievementHeader}>
-            <IconSymbol name="bolt.fill" size={24} color="#FF6B35" />
-            <Text style={styles.achievementTitle}>Fastest Time</Text>
+          
+          <View style={[styles.achievementCard, styles.achievementCardCompact]}>
+            <View style={styles.achievementHeader}>
+              <IconSymbol name="bolt.fill" size={20} color={Colors.warmOrange} />
+              <Text style={styles.achievementTitle}>Fastest Time</Text>
+            </View>
+            <Text style={styles.achievementValue}>{userStats?.fastestTime}s</Text>
+            <Text style={styles.achievementSubtitle}>lightning fast!</Text>
           </View>
-          <Text style={styles.achievementValue}>{userStats?.fastestTime}s</Text>
-          <Text style={styles.achievementSubtitle}>Lightning fast!</Text>
         </View>
       </View>
 
       <TouchableOpacity style={styles.shareButton} onPress={handleShare}>
-        <IconSymbol name="square.and.arrow.up" size={20} color="#fff" />
+        <IconSymbol name="square.and.arrow.up" size={20} color={Colors.textPrimaryDark} />
         <Text style={styles.shareButtonText}>Share Your Progress</Text>
       </TouchableOpacity>
     </ScrollView>
@@ -204,19 +209,21 @@ export default function AnalyticsScreen() {
 
   if (loading) {
     return (
-      <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#3478f6" />
-        <Text style={styles.loadingText}>Loading your analytics...</Text>
-      </View>
+      <SafeAreaView style={[GlobalStyles.screenWelcome, styles.container]}>
+        <View style={styles.loadingContainer}>
+          <ActivityIndicator size="large" color={Colors.goldenYellow} />
+          <Text style={[Typography.bodyText, styles.loadingText]}>Loading your analytics...</Text>
+        </View>
+      </SafeAreaView>
     );
   }
 
   return (
-    <ThemedView style={styles.container}>
+    <SafeAreaView style={[GlobalStyles.screenWelcome, styles.container]}>
       <View style={styles.header}>
-        <Text style={styles.title}>Analytics Dashboard</Text>
-        <TouchableOpacity onPress={fetchAnalyticsData}>
-          <IconSymbol name="arrow.clockwise" size={24} color="#3478f6" />
+        <Text style={[Typography.sectionHeader, styles.title]}>Analytics Dashboard</Text>
+        <TouchableOpacity onPress={fetchAnalyticsData} style={styles.refreshButton}>
+          <IconSymbol name="arrow.clockwise" size={24} color={Colors.goldenYellow} />
         </TouchableOpacity>
       </View>
 
@@ -225,7 +232,7 @@ export default function AnalyticsScreen() {
           style={[styles.tab, selectedView === 'overview' && styles.activeTab]}
           onPress={() => setSelectedView('overview')}
         >
-          <Text style={[styles.tabText, selectedView === 'overview' && styles.activeTabText]}>
+          <Text style={[Typography.buttonText, styles.tabText, selectedView === 'overview' && styles.activeTabText]}>
             Overview
           </Text>
         </TouchableOpacity>
@@ -233,7 +240,7 @@ export default function AnalyticsScreen() {
           style={[styles.tab, selectedView === 'trends' && styles.activeTab]}
           onPress={() => setSelectedView('trends')}
         >
-          <Text style={[styles.tabText, selectedView === 'trends' && styles.activeTabText]}>
+          <Text style={[Typography.buttonText, styles.tabText, selectedView === 'trends' && styles.activeTabText]}>
             Trends
           </Text>
         </TouchableOpacity>
@@ -241,7 +248,7 @@ export default function AnalyticsScreen() {
           style={[styles.tab, selectedView === 'detailed' && styles.activeTab]}
           onPress={() => setSelectedView('detailed')}
         >
-          <Text style={[styles.tabText, selectedView === 'detailed' && styles.activeTabText]}>
+          <Text style={[Typography.buttonText, styles.tabText, selectedView === 'detailed' && styles.activeTabText]}>
             Detailed
           </Text>
         </TouchableOpacity>
@@ -256,269 +263,243 @@ export default function AnalyticsScreen() {
         onClose={() => setShowViralShare(false)}
         trigger="analytics"
       />
-    </ThemedView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f7fafc',
   },
   loadingContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f7fafc',
   },
   loadingText: {
-    marginTop: 16,
-    fontSize: 16,
-    color: '#666',
+    color: Colors.textPrimaryDark,
+    marginTop: Spacing.md,
   },
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingTop: 60,
-    paddingBottom: 20,
-    backgroundColor: '#fff',
-    borderBottomWidth: 1,
-    borderBottomColor: '#e2e8f0',
+    paddingHorizontal: Spacing.lg,
+    paddingBottom: Spacing.md,
+    marginTop: Spacing.sm,
   },
   title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1a202c',
+    color: Colors.textPrimaryDark,
+    flex: 1,
+  },
+  refreshButton: {
+    padding: Spacing.xs,
   },
   tabBar: {
     flexDirection: 'row',
-    backgroundColor: '#fff',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#e2e8f0',
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: Spacing.sm,
+    marginBottom: Spacing.md,
   },
   tab: {
     flex: 1,
-    paddingVertical: 12,
+    paddingVertical: Spacing.sm,
     alignItems: 'center',
     borderRadius: 8,
     marginHorizontal: 4,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
   activeTab: {
-    backgroundColor: '#3478f6',
+    backgroundColor: Colors.goldenYellow,
   },
   tabText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#64748b',
+    color: Colors.textSecondaryDark,
+    fontSize: 12,
+    textTransform: 'uppercase',
   },
   activeTabText: {
-    color: '#fff',
+    color: Colors.primaryDark,
   },
   tabContent: {
     flex: 1,
-    padding: 20,
+    paddingHorizontal: Spacing.lg,
   },
   section: {
-    marginBottom: 24,
+    marginBottom: Spacing.lg,
   },
   sectionTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#1a202c',
-    marginBottom: 16,
+    ...Typography.smallText,
+    color: Colors.textPrimaryDark,
+    marginBottom: Spacing.md,
+    fontWeight: '600',
   },
   statsGrid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
+  statsGrid2x2: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+  },
   statCard: {
-    width: (width - 60) / 2,
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
+    ...GlobalStyles.cardOnDark,
+    width: '48%',
+    marginBottom: Spacing.sm,
   },
   statHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
   },
   statTitle: {
-    fontSize: 14,
-    color: '#64748b',
+    ...Typography.statLabel,
+    color: Colors.textSecondaryDark,
     marginLeft: 6,
-    fontWeight: '500',
   },
   statValue: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#1a202c',
+    ...Typography.statNumber,
+    color: Colors.textPrimaryDark,
     marginBottom: 4,
   },
   statSubtitle: {
-    fontSize: 12,
-    color: '#94a3b8',
+    ...Typography.statLabel,
+    color: Colors.textSecondaryDark,
   },
   achievementCard: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 12,
-    marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
+    ...GlobalStyles.cardOnDark,
+    marginBottom: Spacing.sm,
+  },
+  achievementsGrid: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    gap: Spacing.sm,
+  },
+  achievementCardCompact: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: Spacing.md,
   },
   achievementHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
   },
   achievementTitle: {
-    fontSize: 16,
+    ...Typography.bodyText,
+    color: Colors.textPrimaryDark,
+    marginLeft: Spacing.xs,
     fontWeight: '600',
-    color: '#1a202c',
-    marginLeft: 8,
   },
   achievementValue: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    color: '#3478f6',
+    ...Typography.sectionHeader,
+    color: Colors.goldenYellow,
     marginBottom: 4,
   },
   achievementSubtitle: {
-    fontSize: 14,
-    color: '#64748b',
+    ...Typography.smallText,
+    color: Colors.textSecondaryDark,
   },
   shareButton: {
-    backgroundColor: '#3478f6',
+    ...GlobalStyles.buttonMicro,
+    ...GlobalStyles.buttonPrimaryDark,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 16,
-    borderRadius: 12,
-    marginTop: 8,
+    width: '100%',
+    marginTop: Spacing.xs,
   },
   shareButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: '600',
-    marginLeft: 8,
+    ...GlobalStyles.buttonTextPrimaryDark,
+    marginLeft: Spacing.xs,
   },
   trendCard: {
-    backgroundColor: '#fff',
-    padding: 16,
-    borderRadius: 12,
-    marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
+    ...GlobalStyles.cardOnDark,
+    marginBottom: Spacing.sm,
   },
   trendHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
   },
   trendDate: {
-    fontSize: 16,
+    ...Typography.bodyText,
+    color: Colors.textPrimaryDark,
     fontWeight: '600',
-    color: '#1a202c',
   },
   trendBadge: {
-    backgroundColor: '#10b981',
-    paddingHorizontal: 8,
+    backgroundColor: Colors.secondaryTeal,
+    paddingHorizontal: Spacing.xs,
     paddingVertical: 4,
     borderRadius: 6,
   },
   trendBadgeText: {
-    color: '#fff',
-    fontSize: 12,
-    fontWeight: '600',
+    ...Typography.statLabel,
+    color: Colors.textPrimaryDark,
   },
   trendStats: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: Spacing.sm,
   },
   trendStat: {
-    fontSize: 14,
-    color: '#64748b',
-    marginRight: 8,
+    ...Typography.smallText,
+    color: Colors.textSecondaryDark,
+    marginRight: Spacing.xs,
   },
   progressBar: {
     height: 4,
-    backgroundColor: '#e2e8f0',
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: 2,
     overflow: 'hidden',
   },
   progressFill: {
     height: '100%',
-    backgroundColor: '#10b981',
+    backgroundColor: Colors.secondaryTeal,
     borderRadius: 2,
   },
   detailedStats: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 20,
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
+    ...GlobalStyles.cardOnDark,
   },
   detailedRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingVertical: 12,
+    paddingVertical: Spacing.sm,
     borderBottomWidth: 1,
-    borderBottomColor: '#f1f5f9',
+    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
   },
   detailedLabel: {
-    fontSize: 16,
-    color: '#64748b',
+    ...Typography.bodyText,
+    color: Colors.textSecondaryDark,
     flex: 1,
   },
   detailedValue: {
-    fontSize: 16,
+    ...Typography.bodyText,
+    color: Colors.textPrimaryDark,
     fontWeight: '600',
-    color: '#1a202c',
   },
   sharePreview: {
-    backgroundColor: '#fff',
-    padding: 20,
-    borderRadius: 12,
+    ...GlobalStyles.cardOnDark,
     alignItems: 'center',
-    shadowColor: '#000',
-    shadowOpacity: 0.05,
-    shadowRadius: 8,
-    elevation: 2,
   },
   shareEmojis: {
     fontSize: 24,
-    marginBottom: 12,
+    marginBottom: Spacing.sm,
     textAlign: 'center',
   },
   shareSummary: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#1a202c',
+    ...Typography.bodyText,
+    color: Colors.textPrimaryDark,
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
+    fontWeight: '600',
   },
   shareRank: {
-    fontSize: 14,
-    color: '#3478f6',
+    ...Typography.smallText,
+    color: Colors.goldenYellow,
     fontWeight: '600',
   },
 });
